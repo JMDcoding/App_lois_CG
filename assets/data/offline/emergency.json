@@ -1,0 +1,78 @@
+[
+  {
+    "id": "arrestation",
+    "title": "Arrestation",
+    "icon": "front_hand",
+    "color": "#E63946",
+    "rights": [
+      "Droit de connaître les raisons de l'arrestation",
+      "Droit de contacter un avocat",
+      "Droit de prévenir sa famille",
+      "Droit de garder le silence",
+      "Interdiction de toute forme de violence"
+    ],
+    "actions": [
+      "Restez calme et coopérez",
+      "Demandez à voir l'officier de police judiciaire",
+      "Notez les noms et matricules des agents",
+      "Ne signez aucun document sans l'avoir lu",
+      "Contactez un proche dès que possible"
+    ],
+    "numbers": [
+      {"name": "Police", "number": "117"},
+      {"name": "Barreau de Brazzaville", "number": "+242 06 XXX XXXX"},
+      {"name": "Commission nationale des droits de l'homme", "number": "+242 06 XXX XXXX"}
+    ],
+    "procedure": "En cas d'arrestation, la garde à vue ne peut excéder 48 heures renouvelable une fois. Vous devez être présenté au procureur dans ce délai."
+  },
+  {
+    "id": "violence",
+    "title": "Violence",
+    "icon": "warning",
+    "color": "#E76F51",
+    "rights": ["Droit à la protection", "Droit de porter plainte", "Droit à l'assistance juridique"],
+    "actions": ["Mettez-vous en sécurité", "Appelez le 117", "Allez au commissariat le plus proche", "Consultez un médecin"],
+    "numbers": [{"name": "Police", "number": "117"}, {"name": "Urgences", "number": "112"}],
+    "procedure": "Déposez une plainte au commissariat. Un certificat médical est nécessaire."
+  },
+  {
+    "id": "expulsion",
+    "title": "Expulsion",
+    "icon": "home",
+    "color": "#E9C46A",
+    "rights": ["Droit au préavis", "Droit de contester", "Interdiction d'expulsion sans décision de justice"],
+    "actions": ["Vérifiez votre contrat de bail", "Consultez un avocat", "Ne quittez pas les lieux sans décision judiciaire"],
+    "numbers": [{"name": "Tribunal", "number": ""}],
+    "procedure": "Une expulsion ne peut être réalisée que sur décision du tribunal."
+  },
+  {
+    "id": "accident",
+    "title": "Accident",
+    "icon": "car_crash",
+    "color": "#457B9D",
+    "rights": ["Droit à l'indemnisation", "Droit au constat", "Droit à l'assistance médicale"],
+    "actions": ["Sécurisez les lieux", "Appelez les secours", "Faites un constat amiable", "Prenez des photos"],
+    "numbers": [{"name": "Pompiers", "number": "118"}, {"name": "Urgences", "number": "112"}],
+    "procedure": "Remplissez un constat amiable et déclarez l'accident à votre assurance sous 5 jours."
+  },
+  {
+    "id": "arnaque",
+    "title": "Arnaque",
+    "icon": "report",
+    "color": "#F4A261",
+    "rights": ["Droit de porter plainte", "Droit à restitution", "Droit à des dommages et intérêts"],
+    "actions": ["Conservez toutes les preuves", "Ne payez plus rien", "Déposez une plainte", "Contactez votre banque"],
+    "numbers": [{"name": "Police", "number": "117"}],
+    "procedure": "Déposez une plainte au commissariat avec toutes les preuves (messages, reçus, etc.)."
+  },
+  {
+    "id": "litige_foncier",
+    "title": "Litige foncier",
+    "icon": "terrain",
+    "color": "#2A9D8F",
+    "rights": ["Droit à la propriété", "Droit au bornage", "Droit de contester"],
+    "actions": ["Rassemblez vos titres de propriété", "Faites appel à un géomètre", "Consultez un notaire"],
+    "numbers": [{"name": "Service du cadastre", "number": ""}],
+    "procedure": "Les litiges fonciers se règlent d'abord à l'amiable, puis devant le tribunal de grande instance."
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "cni",
+    "title": "Carte nationale d'identité",
+    "icon": "badge",
+    "cost": "15 000 FCFA",
+    "delay": "30 jours",
+    "location": "Préfecture ou sous-préfecture",
+    "documents": ["Extrait de naissance", "4 photos d'identité", "Justificatif de domicile", "Formulaire de demande"],
+    "steps": [
+      "Rassembler les documents requis",
+      "Se rendre à la préfecture ou sous-préfecture",
+      "Remplir le formulaire de demande",
+      "Déposer le dossier complet",
+      "Payer les frais et garder le reçu",
+      "Retirer la CNI à la date indiquée"
+    ],
+    "tips": ["Arrivez tôt pour éviter l'attente", "Faites des photocopies de tous vos documents"]
+  },
+  {
+    "id": "passeport",
+    "title": "Passeport",
+    "icon": "flight",
+    "cost": "50 000 FCFA",
+    "delay": "45 jours",
+    "location": "Direction de la police des frontières",
+    "documents": ["CNI", "4 photos d'identité", "Extrait de naissance", "Formulaire de demande", "Ancien passeport (si renouvellement)"],
+    "steps": ["Rassembler les documents", "Se rendre à la direction compétente", "Déposer le dossier", "Faire la biométrie", "Payer les frais", "Retirer le passeport"],
+    "tips": ["Commencez les démarches au moins 2 mois avant votre voyage"]
+  },
+  {
+    "id": "permis",
+    "title": "Permis de conduire",
+    "icon": "drive_eta",
+    "cost": "25 000 FCFA",
+    "delay": "21 jours",
+    "location": "Direction des transports terrestres",
+    "documents": ["CNI", "Certificat médical", "4 photos", "Attestation d'auto-école"],
+    "steps": ["Passer l'examen théorique", "Passer l'examen pratique", "Déposer le dossier", "Retirer le permis"],
+    "tips": ["L'examen théorique porte sur le code de la route"]
+  }
+]
