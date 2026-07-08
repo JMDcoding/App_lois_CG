@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/constants/app_colors.dart';
@@ -7,12 +7,64 @@ import '../../../../core/widgets/search_bar_widget.dart';
 import '../../../../core/widgets/category_card.dart';
 import '../../../../core/providers/firebase_providers.dart';
 
+import 'package:url_launcher/url_launcher.dart';
+
 /// Ã‰cran d'accueil principal Mobeko
-class HomeScreen extends ConsumerWidget {
+class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends ConsumerState<HomeScreen> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _showNewLawsPopup();
+    });
+  }
+
+  Future<void> _showNewLawsPopup() async {
+    if (!mounted) return;
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Nouvelles Lois en Vigueur ðŸ‡¨ðŸ‡¬'),
+        content: const Text(
+          'De nouvelles lois ont Ã©tÃ© promulguÃ©es. Vous pouvez les consulter directement sur le site officiel.',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Fermer'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pop(context);
+              _launchMinistryUrl();
+            },
+            child: const Text('Consulter'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Future<void> _launchMinistryUrl() async {
+    final url = Uri.parse('https://sgg.cg/');
+    if (!await launchUrl(url)) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Impossible d\'ouvrir le lien')),
+        );
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final user = ref.watch(currentUserProvider);
 
@@ -181,7 +233,7 @@ class HomeScreen extends ConsumerWidget {
                         subtitle: 'Nouvelles lois',
                         icon: Icons.newspaper_rounded,
                         color: AppColors.forestGreen,
-                        onTap: () => context.push(AppRoutes.news),
+                        onTap: () => _launchMinistryUrl(),
                       ),
                     ),
                   ],

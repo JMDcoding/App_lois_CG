@@ -1,11 +1,17 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../core/constants/app_colors.dart';
+import '../../../../core/providers/theme_provider.dart';
 
-class SettingsScreen extends StatelessWidget {
+class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final themeMode = ref.watch(themeModeProvider);
+    String themeString = 'SystÃ¨me';
+    if (themeMode == ThemeMode.light) themeString = 'Clair';
+    if (themeMode == ThemeMode.dark) themeString = 'Sombre';
     return Scaffold(
       appBar: AppBar(title: const Text('ParamÃ¨tres')),
       body: ListView(
@@ -17,8 +23,24 @@ class SettingsScreen extends StatelessWidget {
                 title: const Text('Langue'), subtitle: const Text('FranÃ§ais'),
                 trailing: const Icon(Icons.arrow_forward_ios_rounded, size: 14), onTap: () {}),
             ListTile(leading: const Icon(Icons.dark_mode_rounded),
-                title: const Text('ThÃ¨me'), subtitle: const Text('SystÃ¨me'),
-                trailing: const Icon(Icons.arrow_forward_ios_rounded, size: 14), onTap: () {}),
+                title: const Text('ThÃ¨me'), subtitle: Text(themeString),
+                trailing: const Icon(Icons.arrow_forward_ios_rounded, size: 14), 
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: const Text('Choisir le thÃ¨me'),
+                      content: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          ListTile(title: const Text('SystÃ¨me'), onTap: () { ref.read(themeModeProvider.notifier).setThemeMode(ThemeMode.system); Navigator.pop(context); }),
+                          ListTile(title: const Text('Clair'), onTap: () { ref.read(themeModeProvider.notifier).setThemeMode(ThemeMode.light); Navigator.pop(context); }),
+                          ListTile(title: const Text('Sombre'), onTap: () { ref.read(themeModeProvider.notifier).setThemeMode(ThemeMode.dark); Navigator.pop(context); }),
+                        ],
+                      ),
+                    ),
+                  );
+                }),
           ]),
           _SettingsSection(title: 'DonnÃ©es', children: [
             SwitchListTile(value: true, onChanged: (_) {},

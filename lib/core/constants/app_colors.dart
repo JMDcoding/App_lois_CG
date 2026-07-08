@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 /// Palette de couleurs Mobeko
 /// InspirÃ©e des couleurs du drapeau et de la nature congolaise
@@ -12,8 +12,8 @@ class AppColors {
   /// Vert foncÃ© - Couleur primaire profonde
   static const Color darkGreen = Color(0xFF081C15);
 
-  /// Vert forÃªt - Couleur primaire
-  static const Color forestGreen = Color(0xFF1B4332);
+  /// Vert principal (Drapeau Congo)
+  static const Color forestGreen = Color(0xFF009543);
 
   /// Vert moyen - Couleur secondaire
   static const Color mediumGreen = Color(0xFF40916C);
@@ -41,11 +41,11 @@ class AppColors {
   // Couleurs fonctionnelles
   // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
-  /// Rouge urgence
-  static const Color emergency = Color(0xFFE63946);
+  /// Rouge urgence (Drapeau Congo)
+  static const Color emergency = Color(0xFFDC241F);
 
-  /// Orange avertissement
-  static const Color warning = Color(0xFFF4A261);
+  /// Orange / Jaune avertissement (Drapeau Congo)
+  static const Color warning = Color(0xFFFBDE4A);
 
   /// Bleu information
   static const Color info = Color(0xFF457B9D);
@@ -101,6 +101,6 @@ class AppColors {
   static const LinearGradient emergencyGradient = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
-    colors: [Color(0xFFE63946), Color(0xFFFF6B6B)],
+    colors: [Color(0xFFDC241F), Color(0xFFFF6B6B)],
   );
 }

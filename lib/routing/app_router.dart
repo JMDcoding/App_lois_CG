@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../core/constants/app_routes.dart';
+import '../features/splash/presentation/screens/splash_screen.dart';
 import '../features/onboarding/presentation/screens/onboarding_screen.dart';
 import '../features/auth/presentation/screens/login_screen.dart';
 import '../features/auth/presentation/screens/register_screen.dart';
@@ -36,19 +37,26 @@ final _shellNavigatorKey = GlobalKey<NavigatorState>();
 final routerProvider = Provider<GoRouter>((ref) {
   return GoRouter(
     navigatorKey: _rootNavigatorKey,
-    initialLocation: AppRoutes.home,
+    initialLocation: AppRoutes.splash,
     debugLogDiagnostics: true,
     redirect: (context, state) {
       final isOnboarding = state.matchedLocation == AppRoutes.onboarding;
+      final isSplash = state.matchedLocation == AppRoutes.splash;
 
-      // Pas de redirection si onboarding
-      if (isOnboarding) return null;
+      // Pas de redirection si onboarding ou splash
+      if (isOnboarding || isSplash) return null;
 
       // Pas besoin d'ÃƒÂªtre connectÃƒÂ© pour utiliser l'app (connexion anonyme)
       // La redirection est optionnelle
       return null;
     },
     routes: [
+      // Splash
+      GoRoute(
+        path: AppRoutes.splash,
+        builder: (context, state) => const SplashScreen(),
+      ),
+
       // Onboarding
       GoRoute(
         path: AppRoutes.onboarding,

@@ -3,10 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'core/l10n/app_localizations.dart';
 import 'core/theme/app_theme.dart';
+import 'core/providers/theme_provider.dart';
 import 'routing/app_router.dart';
-
-/// Provider pour le mode thÃ¨me
-final themeModeProvider = StateProvider<ThemeMode>((ref) => ThemeMode.system);
 
 /// Provider pour la locale
 final localeProvider = StateProvider<Locale>((ref) => const Locale('fr'));
