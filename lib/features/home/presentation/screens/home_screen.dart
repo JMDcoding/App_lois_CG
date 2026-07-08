@@ -5,6 +5,7 @@ import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_routes.dart';
 import '../../../../core/widgets/search_bar_widget.dart';
 import '../../../../core/widgets/category_card.dart';
+import '../../../../core/widgets/responsive_layout.dart';
 import '../../../../core/providers/firebase_providers.dart';
 
 import 'package:url_launcher/url_launcher.dart';
@@ -81,8 +82,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
     return Scaffold(
       body: SafeArea(
-        child: CustomScrollView(
-          slivers: [
+        child: ResponsiveMaxWidth(
+          child: CustomScrollView(
+            slivers: [
             // Header avec message de bienvenue
             SliverToBoxAdapter(
               child: Padding(
@@ -167,11 +169,12 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               ),
             ),
             SliverToBoxAdapter(
-              child: SizedBox(
-                height: 110,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                child: Wrap(
+                  spacing: 12,
+                  runSpacing: 12,
+                  alignment: WrapAlignment.center,
                   children: [
                     _buildCategoryChip(context, 'Travail', Icons.work_outline_rounded),
                     _buildCategoryChip(context, 'Famille', Icons.family_restroom_rounded),
@@ -327,7 +330,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             const SliverToBoxAdapter(child: SizedBox(height: 80)),
           ],
         ),
-      ),
+      )),
     );
   }
 
