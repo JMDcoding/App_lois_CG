@@ -72,7 +72,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
               width: 150,
               height: 150,
               child: Image.asset(
-                'assets/images/logo.png',
+                'assets/images/logo/logo.jpeg',
                 errorBuilder: (context, error, stackTrace) {
                   // Fallback temporaire si le logo.png n'est pas encore ajoutÃ©
                   return Container(

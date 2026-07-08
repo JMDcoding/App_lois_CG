@@ -8,6 +8,7 @@ import '../../../../core/widgets/category_card.dart';
 import '../../../../core/providers/firebase_providers.dart';
 
 import 'package:url_launcher/url_launcher.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 /// Ã‰cran d'accueil principal Mobeko
 class HomeScreen extends ConsumerStatefulWidget {
@@ -27,9 +28,15 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   }
 
   Future<void> _showNewLawsPopup() async {
+    final prefs = await SharedPreferences.getInstance();
+    final hasSeen = prefs.getBool('has_seen_new_laws_popup') ?? false;
+
+    if (hasSeen) return;
     if (!mounted) return;
+
     showDialog(
       context: context,
+      barrierDismissible: false,
       builder: (context) => AlertDialog(
         title: const Text('Nouvelles Lois en Vigueur ðŸ‡¨ðŸ‡¬'),
         content: const Text(
@@ -37,11 +44,15 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         ),
         actions: [
           TextButton(
-            onPressed: () => Navigator.pop(context),
+            onPressed: () {
+              prefs.setBool('has_seen_new_laws_popup', true);
+              Navigator.pop(context);
+            },
             child: const Text('Fermer'),
           ),
           ElevatedButton(
             onPressed: () {
+              prefs.setBool('has_seen_new_laws_popup', true);
               Navigator.pop(context);
               _launchMinistryUrl();
             },

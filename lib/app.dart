@@ -4,10 +4,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'core/l10n/app_localizations.dart';
 import 'core/theme/app_theme.dart';
 import 'core/providers/theme_provider.dart';
+import 'core/providers/locale_provider.dart';
 import 'routing/app_router.dart';
-
-/// Provider pour la locale
-final localeProvider = StateProvider<Locale>((ref) => const Locale('fr'));
 
 /// Application principale Mobeko
 class MobekoApp extends ConsumerWidget {
@@ -36,6 +34,7 @@ class MobekoApp extends ConsumerWidget {
       locale: locale,
       supportedLocales: const [
         Locale('fr'),      // FranÃ§ais
+        Locale('en'),      // Anglais
         Locale('ln'),      // Lingala
         Locale('kg'),      // Kituba
       ],

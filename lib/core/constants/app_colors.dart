@@ -72,9 +72,9 @@ class AppColors {
   // Mode sombre
   // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
-  static const Color darkSurface = Color(0xFF0D1B12);
-  static const Color darkCard = Color(0xFF132A1C);
-  static const Color darkElevated = Color(0xFF1A3626);
+  static const Color darkSurface = Color(0xFF051C10); // Teinte vert foncé marquée
+  static const Color darkCard = Color(0xFF0A2B19);
+  static const Color darkElevated = Color(0xFF113D24);
 
   // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
   // Gradients
