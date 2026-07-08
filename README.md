@@ -1,6 +1,7 @@
 # Mobeko 🇨🇬
 
-**Mobeko** est un assistant juridique intelligent spécialement conçu pour la République du Congo. Il vise à démocratiser l'accès au droit en rendant les lois, les démarches administratives et les droits civiques accessibles, compréhensibles et consultables à tout moment.
+**Mobeko** (qui signifie "La Loi" en Lingala) est un assistant juridique intelligent spécialement conçu pour la République du Congo. 
+Notre mission est de démocratiser l'accès au droit en rendant les lois, les démarches administratives et les droits civiques accessibles, compréhensibles et consultables par tous les citoyens, à tout moment et en plusieurs langues.
 
 ## 🚀 Fonctionnalités Principales
 - **Bibliothèque Juridique :** Consultez les lois congolaises classées par catégories (Travail, Famille, Logement, etc.).
@@ -41,4 +42,15 @@ flutter build apk --release
 Le fichier `.apk` se trouvera dans `build/app/outputs/flutter-apk/`.
 
 ## 🤝 Contribution
-Pour contribuer au projet, veuillez créer une branche pour chaque nouvelle fonctionnalité, et soumettre une Pull Request pour revue.
+Nous accueillons avec grand plaisir toutes les contributions ! 
+1. **Forkez** le projet
+2. **Créez votre branche** (`git checkout -b feature/NouvelleFonctionnalite`)
+3. **Commitez vos changements** (`git commit -m 'Ajout d'une nouvelle fonctionnalité'`)
+4. **Pushez vers la branche** (`git push origin feature/NouvelleFonctionnalite`)
+5. **Ouvrez une Pull Request**
+
+## 📜 Licence
+Ce projet est sous licence MIT - voir le fichier LICENSE pour plus de détails.
+
+---
+*Fait avec ❤️ pour la République du Congo.*
