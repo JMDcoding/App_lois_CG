@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import '../../../../core/constants/app_colors.dart';
 
 class ScanScreen extends StatelessWidget {
@@ -6,7 +6,6 @@ class ScanScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
       appBar: AppBar(title: const Text('Scanner un document')),
       body: Center(
@@ -18,7 +17,7 @@ class ScanScreen extends StatelessWidget {
               Container(
                 width: 120, height: 120,
                 decoration: BoxDecoration(
-                  color: AppColors.forestGreen.withOpacity(0.1),
+                  color: AppColors.forestGreen.withValues(alpha: 0.1),
                   shape: BoxShape.circle,
                 ),
                 child: const Icon(Icons.document_scanner_rounded,

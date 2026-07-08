@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import '../../../../core/constants/app_colors.dart';
+﻿import 'package:flutter/material.dart';
 import '../../../../core/widgets/error_widget.dart';
 
 class FavoritesScreen extends StatelessWidget {
@@ -16,25 +15,25 @@ class FavoritesScreen extends StatelessWidget {
             tabs: [
               Tab(text: 'Articles'),
               Tab(text: 'Documents'),
-              Tab(text: 'Réponses IA'),
+              Tab(text: 'RÃ©ponses IA'),
             ],
           ),
         ),
         body: const TabBarView(
           children: [
             MobekoEmptyWidget(
-              message: 'Aucun article sauvegardé',
-              subtitle: 'Appuyez sur ❤️ pour sauvegarder un article',
+              message: 'Aucun article sauvegardÃ©',
+              subtitle: 'Appuyez sur â¤ï¸ pour sauvegarder un article',
               icon: Icons.bookmark_outline_rounded,
             ),
             MobekoEmptyWidget(
-              message: 'Aucun document sauvegardé',
-              subtitle: 'Vos documents générés apparaîtront ici',
+              message: 'Aucun document sauvegardÃ©',
+              subtitle: 'Vos documents gÃ©nÃ©rÃ©s apparaÃ®tront ici',
               icon: Icons.description_outlined,
             ),
             MobekoEmptyWidget(
-              message: 'Aucune réponse sauvegardée',
-              subtitle: 'Sauvegardez les réponses utiles de l\'assistant',
+              message: 'Aucune rÃ©ponse sauvegardÃ©e',
+              subtitle: 'Sauvegardez les rÃ©ponses utiles de l\'assistant',
               icon: Icons.smart_toy_outlined,
             ),
           ],

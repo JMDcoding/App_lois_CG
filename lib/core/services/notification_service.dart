@@ -1,4 +1,4 @@
-import 'package:firebase_messaging/firebase_messaging.dart';
+﻿import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 
 /// Service de notifications push via Firebase Cloud Messaging
@@ -19,27 +19,27 @@ class NotificationService {
     );
 
     if (settings.authorizationStatus == AuthorizationStatus.authorized) {
-      debugPrint('Notifications autorisées');
+      debugPrint('Notifications autorisÃ©es');
     } else if (settings.authorizationStatus == AuthorizationStatus.provisional) {
-      debugPrint('Notifications provisoires autorisées');
+      debugPrint('Notifications provisoires autorisÃ©es');
     } else {
-      debugPrint('Notifications refusées');
+      debugPrint('Notifications refusÃ©es');
     }
 
     // Obtenir le token FCM
     final token = await _messaging.getToken();
     debugPrint('FCM Token: $token');
 
-    // Écouter les changements de token
+    // Ã‰couter les changements de token
     _messaging.onTokenRefresh.listen((newToken) {
-      debugPrint('FCM Token rafraîchi: $newToken');
+      debugPrint('FCM Token rafraÃ®chi: $newToken');
       // TODO: Sauvegarder le nouveau token dans Firestore
     });
 
-    // Gérer les messages reçus en foreground
+    // GÃ©rer les messages reÃ§us en foreground
     FirebaseMessaging.onMessage.listen(_handleForegroundMessage);
 
-    // Gérer les messages quand l'app est ouverte depuis une notification
+    // GÃ©rer les messages quand l'app est ouverte depuis une notification
     FirebaseMessaging.onMessageOpenedApp.listen(_handleMessageOpenedApp);
   }
 
@@ -48,38 +48,38 @@ class NotificationService {
     return await _messaging.getToken();
   }
 
-  /// S'abonner à un topic
+  /// S'abonner Ã  un topic
   Future<void> subscribeToTopic(String topic) async {
     await _messaging.subscribeToTopic(topic);
-    debugPrint('Abonné au topic: $topic');
+    debugPrint('AbonnÃ© au topic: $topic');
   }
 
-  /// Se désabonner d'un topic
+  /// Se dÃ©sabonner d'un topic
   Future<void> unsubscribeFromTopic(String topic) async {
     await _messaging.unsubscribeFromTopic(topic);
-    debugPrint('Désabonné du topic: $topic');
+    debugPrint('DÃ©sabonnÃ© du topic: $topic');
   }
 
-  /// Abonnements par défaut
+  /// Abonnements par dÃ©faut
   Future<void> subscribeToDefaultTopics() async {
-    await subscribeToTopic('news');        // Actualités
+    await subscribeToTopic('news');        // ActualitÃ©s
     await subscribeToTopic('new_laws');     // Nouvelles lois
-    await subscribeToTopic('general');      // Notifications générales
+    await subscribeToTopic('general');      // Notifications gÃ©nÃ©rales
   }
 
   void _handleForegroundMessage(RemoteMessage message) {
-    debugPrint('Message reçu en foreground: ${message.notification?.title}');
+    debugPrint('Message reÃ§u en foreground: ${message.notification?.title}');
     // TODO: Afficher une notification locale ou un snackbar
   }
 
   void _handleMessageOpenedApp(RemoteMessage message) {
     debugPrint('App ouverte depuis notification: ${message.data}');
-    // TODO: Naviguer vers l'écran approprié
+    // TODO: Naviguer vers l'Ã©cran appropriÃ©
   }
 }
 
-/// Handler pour les messages reçus en background (doit être top-level)
+/// Handler pour les messages reÃ§us en background (doit Ãªtre top-level)
 @pragma('vm:entry-point')
 Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  debugPrint('Message reçu en background: ${message.messageId}');
+  debugPrint('Message reÃ§u en background: ${message.messageId}');
 }

@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_routes.dart';
 import '../../../../core/widgets/animated_button.dart';
 
-/// Écran d'onboarding avec 3 pages animées
+/// Ã‰cran d'onboarding avec 3 pages animÃ©es
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
 
@@ -21,21 +21,21 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       icon: Icons.gavel_rounded,
       title: 'Connaissez vos droits',
       subtitle:
-          'Accédez aux lois congolaises expliquées simplement,\ndans votre langue.',
+          'AccÃ©dez aux lois congolaises expliquÃ©es simplement,\ndans votre langue.',
       gradient: AppColors.primaryGradient,
     ),
     _OnboardingData(
       icon: Icons.smart_toy_rounded,
       title: 'Assistant juridique IA',
       subtitle:
-          'Posez vos questions juridiques et obtenez\ndes réponses claires et documentées.',
+          'Posez vos questions juridiques et obtenez\ndes rÃ©ponses claires et documentÃ©es.',
       gradient: AppColors.accentGradient,
     ),
     _OnboardingData(
       icon: Icons.checklist_rounded,
-      title: 'Guidez vos démarches',
+      title: 'Guidez vos dÃ©marches',
       subtitle:
-          'Suivez pas à pas vos démarches administratives\navec tous les documents nécessaires.',
+          'Suivez pas Ã  pas vos dÃ©marches administratives\navec tous les documents nÃ©cessaires.',
       gradient: AppColors.darkGradient,
     ),
   ];
@@ -154,7 +154,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 width: 120,
                 height: 120,
                 decoration: BoxDecoration(
-                  color: AppColors.white.withOpacity(0.15),
+                  color: AppColors.white.withValues(alpha: 0.15),
                   shape: BoxShape.circle,
                 ),
                 child: Icon(
@@ -185,7 +185,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   fontFamily: 'Inter',
                   fontSize: 16,
                   fontWeight: FontWeight.w400,
-                  color: AppColors.white.withOpacity(0.85),
+                  color: AppColors.white.withValues(alpha: 0.85),
                   height: 1.5,
                 ),
                 textAlign: TextAlign.center,

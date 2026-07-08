@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import '../../../../core/constants/app_colors.dart';
 
 class ProcedureDetailScreen extends StatelessWidget {
@@ -8,7 +8,7 @@ class ProcedureDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Guide de démarche')),
+      appBar: AppBar(title: const Text('Guide de dÃ©marche')),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
         child: Column(
@@ -16,34 +16,34 @@ class ProcedureDetailScreen extends StatelessWidget {
           children: [
             const Text('Documents requis', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
             const SizedBox(height: 12),
-            _CheckItem('Carte nationale d\'identité'),
-            _CheckItem('4 photos d\'identité'),
+            _CheckItem('Carte nationale d\'identitÃ©'),
+            _CheckItem('4 photos d\'identitÃ©'),
             _CheckItem('Extrait de naissance'),
             _CheckItem('Justificatif de domicile'),
             _CheckItem('Formulaire de demande rempli'),
             const SizedBox(height: 24),
-            const Text('Étapes', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
+            const Text('Ã‰tapes', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
             const SizedBox(height: 12),
-            _StepItem(1, 'Rassembler les documents', 'Préparez tous les documents listés ci-dessus.'),
-            _StepItem(2, 'Se rendre au bureau compétent', 'Allez à la préfecture ou sous-préfecture de votre localité.'),
-            _StepItem(3, 'Déposer le dossier', 'Remettez votre dossier complet au guichet.'),
-            _StepItem(4, 'Payer les frais', 'Réglez les frais requis et conservez le reçu.'),
-            _StepItem(5, 'Retirer le document', 'Revenez à la date indiquée avec votre reçu.'),
+            _StepItem(1, 'Rassembler les documents', 'PrÃ©parez tous les documents listÃ©s ci-dessus.'),
+            _StepItem(2, 'Se rendre au bureau compÃ©tent', 'Allez Ã  la prÃ©fecture ou sous-prÃ©fecture de votre localitÃ©.'),
+            _StepItem(3, 'DÃ©poser le dossier', 'Remettez votre dossier complet au guichet.'),
+            _StepItem(4, 'Payer les frais', 'RÃ©glez les frais requis et conservez le reÃ§u.'),
+            _StepItem(5, 'Retirer le document', 'Revenez Ã  la date indiquÃ©e avec votre reÃ§u.'),
             const SizedBox(height: 24),
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: AppColors.paleGreen.withOpacity(0.5),
+                color: AppColors.paleGreen.withValues(alpha: 0.5),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text('💡 Conseils', style: TextStyle(fontWeight: FontWeight.w700)),
+                  const Text('ðŸ’¡ Conseils', style: TextStyle(fontWeight: FontWeight.w700)),
                   const SizedBox(height: 8),
-                  Text('• Faites des copies de tous vos documents\n'
-                      '• Arrivez tôt pour éviter la file d\'attente\n'
-                      '• Vérifiez les horaires d\'ouverture',
+                  Text('â€¢ Faites des copies de tous vos documents\n'
+                      'â€¢ Arrivez tÃ´t pour Ã©viter la file d\'attente\n'
+                      'â€¢ VÃ©rifiez les horaires d\'ouverture',
                       style: TextStyle(fontSize: 13, height: 1.6, color: AppColors.grey700)),
                 ],
               ),

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import '../../../../core/constants/app_colors.dart';
 
 class EmergencyDetailScreen extends StatelessWidget {
@@ -14,39 +14,39 @@ class EmergencyDetailScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _Section(title: '⚖️ Vos droits', items: [
-              'Vous avez le droit de connaître les raisons',
+            _Section(title: 'âš–ï¸ Vos droits', items: [
+              'Vous avez le droit de connaÃ®tre les raisons',
               'Vous pouvez contacter un avocat',
-              'Vous pouvez prévenir votre famille',
+              'Vous pouvez prÃ©venir votre famille',
               'Toute violence est interdite',
             ]),
-            _Section(title: '🚨 Actions immédiates', items: [
-              'Restez calme et coopérez',
+            _Section(title: 'ðŸš¨ Actions immÃ©diates', items: [
+              'Restez calme et coopÃ©rez',
               'Notez les noms et matricules',
               'Contactez un proche',
               'Ne signez rien sans comprendre',
             ]),
-            _Section(title: '📞 Numéros utiles', items: [
+            _Section(title: 'ðŸ“ž NumÃ©ros utiles', items: [
               'Police: 117',
               'Urgences: 112',
               'Barreau de Brazzaville',
               'Commission des droits de l\'homme',
             ]),
-            _Section(title: '📋 Procédure', items: [
-              'Étape 1: Restez calme',
-              'Étape 2: Demandez à voir l\'officier',
-              'Étape 3: Exigez un PV',
-              'Étape 4: Contactez un avocat sous 24h',
+            _Section(title: 'ðŸ“‹ ProcÃ©dure', items: [
+              'Ã‰tape 1: Restez calme',
+              'Ã‰tape 2: Demandez Ã  voir l\'officier',
+              'Ã‰tape 3: Exigez un PV',
+              'Ã‰tape 4: Contactez un avocat sous 24h',
             ]),
             Container(
               padding: const EdgeInsets.all(16),
               margin: const EdgeInsets.only(top: 16),
               decoration: BoxDecoration(
-                color: AppColors.paleGreen.withOpacity(0.5),
+                color: AppColors.paleGreen.withValues(alpha: 0.5),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: const Text(
-                '⚠️ En cas de danger immédiat, appelez le 117 (Police) ou le 112 (Urgences).',
+                'âš ï¸ En cas de danger immÃ©diat, appelez le 117 (Police) ou le 112 (Urgences).',
                 style: TextStyle(fontWeight: FontWeight.w600, height: 1.5),
               ),
             ),
@@ -76,7 +76,7 @@ class _Section extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('• ', style: TextStyle(fontSize: 16, color: AppColors.forestGreen)),
+                const Text('â€¢ ', style: TextStyle(fontSize: 16, color: AppColors.forestGreen)),
                 Expanded(child: Text(item, style: const TextStyle(fontSize: 14, height: 1.4))),
               ],
             ),

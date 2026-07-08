@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../core/constants/app_colors.dart';
 
-/// Écran de chat avec l'assistant juridique IA
+/// Ã‰cran de chat avec l'assistant juridique IA
 class ChatScreen extends ConsumerStatefulWidget {
   const ChatScreen({super.key});
 
@@ -21,12 +21,12 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
     super.initState();
     // Message de bienvenue
     _messages.add(_ChatMessage(
-      text: 'Bonjour ! 👋 Je suis votre assistant juridique Mobeko.\n\n'
-          'Je peux vous aider à :\n'
-          '• Comprendre vos droits\n'
-          '• Expliquer les lois congolaises\n'
-          '• Guider vos démarches\n'
-          '• Générer des checklists\n\n'
+      text: 'Bonjour ! ðŸ‘‹ Je suis votre assistant juridique Mobeko.\n\n'
+          'Je peux vous aider Ã  :\n'
+          'â€¢ Comprendre vos droits\n'
+          'â€¢ Expliquer les lois congolaises\n'
+          'â€¢ Guider vos dÃ©marches\n'
+          'â€¢ GÃ©nÃ©rer des checklists\n\n'
           'Comment puis-je vous aider aujourd\'hui ?',
       isUser: false,
       timestamp: DateTime.now(),
@@ -43,7 +43,6 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return Scaffold(
       appBar: AppBar(
         title: Row(
@@ -72,7 +71,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
                   ),
                 ),
                 Text(
-                  _isTyping ? 'En train d\'écrire...' : 'En ligne',
+                  _isTyping ? 'En train d\'Ã©crire...' : 'En ligne',
                   style: TextStyle(
                     fontFamily: 'Inter',
                     fontSize: 11,
@@ -115,10 +114,10 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
             color: isDark
-                ? AppColors.darkCard.withOpacity(0.5)
-                : AppColors.paleGreen.withOpacity(0.3),
+                ? AppColors.darkCard.withValues(alpha: 0.5)
+                : AppColors.paleGreen.withValues(alpha: 0.3),
             child: Text(
-              '⚖️ Informations à titre indicatif. Consultez un avocat pour un conseil personnalisé.',
+              'âš–ï¸ Informations Ã  titre indicatif. Consultez un avocat pour un conseil personnalisÃ©.',
               style: TextStyle(
                 fontFamily: 'Inter',
                 fontSize: 10,
@@ -156,7 +155,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
 
     _scrollToBottom();
 
-    // Simuler une réponse IA (sera remplacé par l'appel Gemini API)
+    // Simuler une rÃ©ponse IA (sera remplacÃ© par l'appel Gemini API)
     Future.delayed(const Duration(seconds: 2), () {
       if (mounted) {
         setState(() {
@@ -173,27 +172,27 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
   }
 
   String _generateMockResponse(String query) {
-    // Réponse mock - sera remplacée par Gemini API
-    return '📋 **Réponse à votre question :**\n\n'
+    // RÃ©ponse mock - sera remplacÃ©e par Gemini API
+    return 'ðŸ“‹ **RÃ©ponse Ã  votre question :**\n\n'
         'Votre question concerne un sujet important du droit congolais. '
-        'Voici les points essentiels à retenir :\n\n'
-        '1. **Cadre juridique** : Selon la Constitution de la République du Congo '
-        'et le Code civil, vos droits sont protégés.\n\n'
-        '2. **Démarches recommandées** :\n'
-        '   • Rassemblez les documents nécessaires\n'
-        '   • Contactez l\'organisme compétent\n'
-        '   • Respectez les délais légaux\n\n'
-        '3. **Organismes compétents** :\n'
-        '   • Tribunal de Grande Instance\n'
-        '   • Préfecture de votre localité\n\n'
-        '⚠️ *Cette réponse est fournie à titre informatif et ne remplace pas '
-        'un conseil juridique personnalisé.*';
+        'Voici les points essentiels Ã  retenir :\n\n'
+        '1. **Cadre juridique** : Selon la Constitution de la RÃ©publique du Congo '
+        'et le Code civil, vos droits sont protÃ©gÃ©s.\n\n'
+        '2. **DÃ©marches recommandÃ©es** :\n'
+        '   â€¢ Rassemblez les documents nÃ©cessaires\n'
+        '   â€¢ Contactez l\'organisme compÃ©tent\n'
+        '   â€¢ Respectez les dÃ©lais lÃ©gaux\n\n'
+        '3. **Organismes compÃ©tents** :\n'
+        '   â€¢ Tribunal de Grande Instance\n'
+        '   â€¢ PrÃ©fecture de votre localitÃ©\n\n'
+        'âš ï¸ *Cette rÃ©ponse est fournie Ã  titre informatif et ne remplace pas '
+        'un conseil juridique personnalisÃ©.*';
   }
 
   void _startVoiceInput() {
-    // TODO: Implémenter la reconnaissance vocale
+    // TODO: ImplÃ©menter la reconnaissance vocale
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Reconnaissance vocale bientôt disponible')),
+      const SnackBar(content: Text('Reconnaissance vocale bientÃ´t disponible')),
     );
   }
 
@@ -201,7 +200,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
     setState(() {
       _messages.clear();
       _messages.add(_ChatMessage(
-        text: 'Bonjour ! 👋 Comment puis-je vous aider ?',
+        text: 'Bonjour ! ðŸ‘‹ Comment puis-je vous aider ?',
         isUser: false,
         timestamp: DateTime.now(),
       ));
@@ -241,6 +240,7 @@ class _MessageBubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
       child: Row(
@@ -301,6 +301,7 @@ class _TypingIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
       child: Row(
@@ -358,6 +359,7 @@ class _ChatInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Container(
       padding: EdgeInsets.fromLTRB(
         12, 8, 12,

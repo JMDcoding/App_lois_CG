@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import '../../../../core/constants/app_colors.dart';
 
 class ArticleDetailScreen extends StatelessWidget {
@@ -21,12 +21,12 @@ class ArticleDetailScreen extends StatelessWidget {
           children: [
             Text('Titre de l\'article', style: Theme.of(context).textTheme.headlineSmall),
             const SizedBox(height: 16),
-            _buildTab(context, 'Résumé', Icons.summarize_outlined,
-                'Ce texte résume les points essentiels de cet article de loi.'),
+            _buildTab(context, 'RÃ©sumÃ©', Icons.summarize_outlined,
+                'Ce texte rÃ©sume les points essentiels de cet article de loi.'),
             _buildTab(context, 'Explication simple', Icons.lightbulb_outline_rounded,
                 'Voici une explication en termes simples de ce que cette loi signifie pour vous.'),
             _buildTab(context, 'Exemples', Icons.format_list_bulleted_rounded,
-                '• Exemple 1: Situation concrète\n• Exemple 2: Cas pratique'),
+                'â€¢ Exemple 1: Situation concrÃ¨te\nâ€¢ Exemple 2: Cas pratique'),
             _buildTab(context, 'Articles de loi', Icons.article_outlined,
                 'Article 123 du Code Civil : "Le texte exact de l\'article..."'),
           ],
@@ -41,7 +41,7 @@ class ArticleDetailScreen extends StatelessWidget {
       child: ExpansionTile(
         leading: Icon(icon, color: AppColors.forestGreen),
         title: Text(title, style: const TextStyle(fontWeight: FontWeight.w600)),
-        initiallyExpanded: title == 'Résumé',
+        initiallyExpanded: title == 'RÃ©sumÃ©',
         children: [
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),

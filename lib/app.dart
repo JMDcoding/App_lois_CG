@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'core/l10n/app_localizations.dart';
 import 'core/theme/app_theme.dart';
 import 'routing/app_router.dart';
 
-/// Provider pour le mode thème
+/// Provider pour le mode thÃ¨me
 final themeModeProvider = StateProvider<ThemeMode>((ref) => ThemeMode.system);
 
 /// Provider pour la locale
@@ -29,7 +29,7 @@ class MobekoApp extends ConsumerWidget {
       // Routing
       routerConfig: router,
 
-      // Thème
+      // ThÃ¨me
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: themeMode,
@@ -37,11 +37,11 @@ class MobekoApp extends ConsumerWidget {
       // Localisation
       locale: locale,
       supportedLocales: const [
-        Locale('fr'),      // Français
+        Locale('fr'),      // FranÃ§ais
         Locale('ln'),      // Lingala
         Locale('kg'),      // Kituba
       ],
-      localizationsDelegates: const [
+      localizationsDelegates: [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,

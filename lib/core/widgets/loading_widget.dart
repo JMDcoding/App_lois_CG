@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
 
-/// Widget de chargement animé avec le thème Mobeko
+/// Widget de chargement animÃ© avec le thÃ¨me Mobeko
 class MobekoLoadingWidget extends StatelessWidget {
   final String? message;
   final double size;
@@ -48,7 +48,7 @@ class MobekoLoadingWidget extends StatelessWidget {
   }
 }
 
-/// Widget de chargement plein écran avec fond semi-transparent
+/// Widget de chargement plein Ã©cran avec fond semi-transparent
 class MobekoFullScreenLoading extends StatelessWidget {
   final String? message;
 

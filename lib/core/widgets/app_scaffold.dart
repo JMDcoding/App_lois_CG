@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_routes.dart';
 
 /// Scaffold principal avec Bottom Navigation Bar Material 3
-/// Contient les 5 onglets : Accueil, Bibliothèque, Assistant, Carte, Profil
+/// Contient les 5 onglets : Accueil, BibliothÃ¨que, Assistant, Carte, Profil
 class AppScaffold extends StatelessWidget {
   final Widget child;
 
@@ -41,7 +41,7 @@ class _BottomNavBar extends StatelessWidget {
               color: isDark ? AppColors.grey500 : AppColors.grey600),
           selectedIcon: Icon(Icons.menu_book_rounded,
               color: isDark ? AppColors.lightGreen : AppColors.forestGreen),
-          label: 'Bibliothèque',
+          label: 'BibliothÃ¨que',
         ),
         NavigationDestination(
           icon: Icon(Icons.smart_toy_outlined,
@@ -105,7 +105,7 @@ class _EmergencyFab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Ne pas afficher le FAB sur l'écran d'urgence
+    // Ne pas afficher le FAB sur l'Ã©cran d'urgence
     final location = GoRouterState.of(context).matchedLocation;
     if (location.startsWith(AppRoutes.emergency)) return const SizedBox.shrink();
 

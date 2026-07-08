@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
 
-/// Widget d'erreur avec possibilité de réessayer
+/// Widget d'erreur avec possibilitÃ© de rÃ©essayer
 class MobekoErrorWidget extends StatelessWidget {
   final String message;
   final String? details;
@@ -30,7 +30,7 @@ class MobekoErrorWidget extends StatelessWidget {
               width: 72,
               height: 72,
               decoration: BoxDecoration(
-                color: AppColors.emergency.withOpacity(0.1),
+                color: AppColors.emergency.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
               child: Icon(
@@ -62,7 +62,7 @@ class MobekoErrorWidget extends StatelessWidget {
               ElevatedButton.icon(
                 onPressed: onRetry,
                 icon: const Icon(Icons.refresh_rounded, size: 18),
-                label: const Text('Réessayer'),
+                label: const Text('RÃ©essayer'),
               ),
             ],
           ],
@@ -102,7 +102,7 @@ class MobekoEmptyWidget extends StatelessWidget {
               height: 72,
               decoration: BoxDecoration(
                 color: (isDark ? AppColors.lightGreen : AppColors.forestGreen)
-                    .withOpacity(0.1),
+                    .withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
               child: Icon(

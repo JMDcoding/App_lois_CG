@@ -1,14 +1,14 @@
-import 'package:flutter/material.dart';
-import 'app_colors.dart';
+﻿import 'package:flutter/material.dart';
+import '../constants/app_colors.dart';
 
-/// Thème Material 3 pour Mobeko
-/// Inclut les thèmes clair et sombre avec la palette verte congolaise
+/// ThÃ¨me Material 3 pour Mobeko
+/// Inclut les thÃ¨mes clair et sombre avec la palette verte congolaise
 class AppTheme {
   AppTheme._();
 
-  // ═══════════════════════════════════════════════════════════
-  // Thème clair
-  // ═══════════════════════════════════════════════════════════
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  // ThÃ¨me clair
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
   static ThemeData get lightTheme {
     return ThemeData(
@@ -58,7 +58,7 @@ class AppTheme {
       // Navigation Bar (Material 3)
       navigationBarTheme: NavigationBarThemeData(
         backgroundColor: AppColors.white,
-        indicatorColor: AppColors.lightGreen.withOpacity(0.3),
+        indicatorColor: AppColors.lightGreen.withValues(alpha: 0.3),
         surfaceTintColor: Colors.transparent,
         elevation: 3,
         height: 72,
@@ -81,7 +81,7 @@ class AppTheme {
       ),
 
       // Cards
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: AppColors.white,
         elevation: 0,
         shape: RoundedRectangleBorder(
@@ -211,7 +211,7 @@ class AppTheme {
       ),
 
       // Dialog
-      dialogTheme: DialogTheme(
+      dialogTheme: DialogThemeData(
         backgroundColor: AppColors.white,
         elevation: 4,
         shape: RoundedRectangleBorder(
@@ -234,7 +234,7 @@ class AppTheme {
       ),
 
       // Tab Bar
-      tabBarTheme: const TabBarTheme(
+      tabBarTheme: const TabBarThemeData(
         labelColor: AppColors.forestGreen,
         unselectedLabelColor: AppColors.grey500,
         indicatorColor: AppColors.forestGreen,
@@ -267,9 +267,9 @@ class AppTheme {
     );
   }
 
-  // ═══════════════════════════════════════════════════════════
-  // Thème sombre
-  // ═══════════════════════════════════════════════════════════
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  // ThÃ¨me sombre
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
   static ThemeData get darkTheme {
     return ThemeData(
@@ -300,7 +300,7 @@ class AppTheme {
       // Navigation Bar (Material 3)
       navigationBarTheme: NavigationBarThemeData(
         backgroundColor: AppColors.darkCard,
-        indicatorColor: AppColors.forestGreen.withOpacity(0.4),
+        indicatorColor: AppColors.forestGreen.withValues(alpha: 0.4),
         surfaceTintColor: Colors.transparent,
         elevation: 3,
         height: 72,
@@ -323,7 +323,7 @@ class AppTheme {
       ),
 
       // Cards
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: AppColors.darkCard,
         elevation: 0,
         shape: RoundedRectangleBorder(
@@ -420,7 +420,7 @@ class AppTheme {
       ),
 
       // Dialog
-      dialogTheme: DialogTheme(
+      dialogTheme: DialogThemeData(
         backgroundColor: AppColors.darkCard,
         elevation: 4,
         shape: RoundedRectangleBorder(
@@ -443,7 +443,7 @@ class AppTheme {
       ),
 
       // Tab Bar
-      tabBarTheme: const TabBarTheme(
+      tabBarTheme: const TabBarThemeData(
         labelColor: AppColors.lightGreen,
         unselectedLabelColor: AppColors.grey500,
         indicatorColor: AppColors.lightGreen,
@@ -467,9 +467,9 @@ class AppTheme {
     );
   }
 
-  // ═══════════════════════════════════════════════════════════
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
   // Color Schemes
-  // ═══════════════════════════════════════════════════════════
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
   static const ColorScheme _lightColorScheme = ColorScheme(
     brightness: Brightness.light,

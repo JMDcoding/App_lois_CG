@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/constants/app_colors.dart';
@@ -7,7 +7,7 @@ import '../../../../core/widgets/search_bar_widget.dart';
 import '../../../../core/widgets/category_card.dart';
 import '../../../../core/providers/firebase_providers.dart';
 
-/// Écran d'accueil principal Mobeko
+/// Ã‰cran d'accueil principal Mobeko
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
@@ -35,8 +35,8 @@ class HomeScreen extends ConsumerWidget {
                           children: [
                             Text(
                               user?.displayName != null
-                                  ? 'Bonjour, ${user!.displayName} 👋'
-                                  : 'Bienvenue sur Mobeko 👋',
+                                  ? 'Bonjour, ${user!.displayName} ðŸ‘‹'
+                                  : 'Bienvenue sur Mobeko ðŸ‘‹',
                               style: TextStyle(
                                 fontFamily: 'Inter',
                                 fontSize: 22,
@@ -47,7 +47,7 @@ class HomeScreen extends ConsumerWidget {
                             ),
                             const SizedBox(height: 4),
                             Text(
-                              'La loi à portée de main',
+                              'La loi Ã  portÃ©e de main',
                               style: TextStyle(
                                 fontFamily: 'Inter',
                                 fontSize: 14,
@@ -83,7 +83,7 @@ class HomeScreen extends ConsumerWidget {
               ),
             ),
 
-            // Accès rapide urgence
+            // AccÃ¨s rapide urgence
             SliverToBoxAdapter(
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(20, 24, 20, 0),
@@ -93,12 +93,12 @@ class HomeScreen extends ConsumerWidget {
               ),
             ),
 
-            // Catégories
+            // CatÃ©gories
             SliverToBoxAdapter(
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(20, 28, 20, 0),
                 child: _SectionHeader(
-                  title: 'Catégories',
+                  title: 'CatÃ©gories',
                   onSeeAll: () => context.go(AppRoutes.library),
                 ),
               ),
@@ -115,9 +115,9 @@ class HomeScreen extends ConsumerWidget {
                     _buildCategoryChip(context, 'Logement', Icons.home_work_outlined),
                     _buildCategoryChip(context, 'Police', Icons.local_police_outlined),
                     _buildCategoryChip(context, 'Justice', Icons.gavel_rounded),
-                    _buildCategoryChip(context, 'Santé', Icons.health_and_safety_outlined),
-                    _buildCategoryChip(context, 'Éducation', Icons.school_outlined),
-                    _buildCategoryChip(context, 'Fiscalité', Icons.account_balance_outlined),
+                    _buildCategoryChip(context, 'SantÃ©', Icons.health_and_safety_outlined),
+                    _buildCategoryChip(context, 'Ã‰ducation', Icons.school_outlined),
+                    _buildCategoryChip(context, 'FiscalitÃ©', Icons.account_balance_outlined),
                     _buildCategoryChip(context, 'Entreprises', Icons.business_center_outlined),
                   ],
                 ),
@@ -138,8 +138,8 @@ class HomeScreen extends ConsumerWidget {
                   children: [
                     Expanded(
                       child: _ServiceCard(
-                        title: 'Démarches',
-                        subtitle: 'Guides étape par étape',
+                        title: 'DÃ©marches',
+                        subtitle: 'Guides Ã©tape par Ã©tape',
                         icon: Icons.checklist_rounded,
                         color: AppColors.mediumGreen,
                         onTap: () => context.push(AppRoutes.procedures),
@@ -149,7 +149,7 @@ class HomeScreen extends ConsumerWidget {
                     Expanded(
                       child: _ServiceCard(
                         title: 'Documents',
-                        subtitle: 'Créer automatiquement',
+                        subtitle: 'CrÃ©er automatiquement',
                         icon: Icons.description_outlined,
                         color: AppColors.info,
                         onTap: () => context.push(AppRoutes.documents),
@@ -177,7 +177,7 @@ class HomeScreen extends ConsumerWidget {
                     const SizedBox(width: 12),
                     Expanded(
                       child: _ServiceCard(
-                        title: 'Actualités',
+                        title: 'ActualitÃ©s',
                         subtitle: 'Nouvelles lois',
                         icon: Icons.newspaper_rounded,
                         color: AppColors.forestGreen,
@@ -189,11 +189,11 @@ class HomeScreen extends ConsumerWidget {
               ),
             ),
 
-            // Questions fréquentes
+            // Questions frÃ©quentes
             SliverToBoxAdapter(
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(20, 28, 20, 12),
-                child: _SectionHeader(title: 'Questions fréquentes'),
+                child: _SectionHeader(title: 'Questions frÃ©quentes'),
               ),
             ),
             SliverToBoxAdapter(
@@ -202,21 +202,21 @@ class HomeScreen extends ConsumerWidget {
                 child: Column(
                   children: [
                     _FaqTile(
-                      question: 'Quels sont mes droits si la police m\'arrête ?',
-                      answer: 'Vous avez le droit de connaître les raisons de votre arrestation, '
-                          'de contacter un avocat et de prévenir votre famille. '
-                          'Consultez la section Police pour plus de détails.',
+                      question: 'Quels sont mes droits si la police m\'arrÃªte ?',
+                      answer: 'Vous avez le droit de connaÃ®tre les raisons de votre arrestation, '
+                          'de contacter un avocat et de prÃ©venir votre famille. '
+                          'Consultez la section Police pour plus de dÃ©tails.',
                     ),
                     _FaqTile(
-                      question: 'Comment créer une entreprise au Congo ?',
-                      answer: 'La création d\'une entreprise nécessite l\'enregistrement au RCCM, '
+                      question: 'Comment crÃ©er une entreprise au Congo ?',
+                      answer: 'La crÃ©ation d\'une entreprise nÃ©cessite l\'enregistrement au RCCM, '
                           'l\'obtention d\'un NIF et plusieurs documents. '
-                          'Consultez notre guide Démarches pour les étapes complètes.',
+                          'Consultez notre guide DÃ©marches pour les Ã©tapes complÃ¨tes.',
                     ),
                     _FaqTile(
                       question: 'Quels documents pour un passeport ?',
                       answer: 'Vous aurez besoin d\'une CNI, 4 photos, un extrait de naissance, '
-                          'et le formulaire de demande. Consultez la section Démarches.',
+                          'et le formulaire de demande. Consultez la section DÃ©marches.',
                     ),
                   ],
                 ),
@@ -232,7 +232,7 @@ class HomeScreen extends ConsumerWidget {
                   decoration: BoxDecoration(
                     color: isDark
                         ? AppColors.darkCard
-                        : AppColors.paleGreen.withOpacity(0.5),
+                        : AppColors.paleGreen.withValues(alpha: 0.5),
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(
                       color: isDark ? AppColors.darkElevated : AppColors.mintGreen,
@@ -245,8 +245,8 @@ class HomeScreen extends ConsumerWidget {
                       const SizedBox(width: 12),
                       Expanded(
                         child: Text(
-                          'Mobeko fournit des informations juridiques à titre informatif. '
-                          'Pour un conseil personnalisé, consultez un avocat.',
+                          'Mobeko fournit des informations juridiques Ã  titre informatif. '
+                          'Pour un conseil personnalisÃ©, consultez un avocat.',
                           style: TextStyle(
                             fontFamily: 'Inter',
                             fontSize: 12,
@@ -299,7 +299,7 @@ class _EmergencyBanner extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
             boxShadow: [
               BoxShadow(
-                color: AppColors.emergency.withOpacity(0.3),
+                color: AppColors.emergency.withValues(alpha: 0.3),
                 blurRadius: 12,
                 offset: const Offset(0, 4),
               ),
@@ -311,7 +311,7 @@ class _EmergencyBanner extends StatelessWidget {
                 width: 44,
                 height: 44,
                 decoration: BoxDecoration(
-                  color: AppColors.white.withOpacity(0.2),
+                  color: AppColors.white.withValues(alpha: 0.2),
                   shape: BoxShape.circle,
                 ),
                 child: const Icon(Icons.emergency_rounded,
@@ -332,11 +332,11 @@ class _EmergencyBanner extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      'Besoin d\'aide immédiate ? Appuyez ici.',
+                      'Besoin d\'aide immÃ©diate ? Appuyez ici.',
                       style: TextStyle(
                         fontFamily: 'Inter',
                         fontSize: 12,
-                        color: AppColors.white.withOpacity(0.85),
+                        color: AppColors.white.withValues(alpha: 0.85),
                       ),
                     ),
                   ],
@@ -421,7 +421,7 @@ class _ServiceCard extends StatelessWidget {
                 width: 40,
                 height: 40,
                 decoration: BoxDecoration(
-                  color: color.withOpacity(0.12),
+                  color: color.withValues(alpha: 0.12),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Icon(icon, color: color, size: 20),

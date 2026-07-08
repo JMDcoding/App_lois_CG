@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import '../../../../core/constants/app_colors.dart';
 
 class CategoryScreen extends StatelessWidget {
@@ -7,7 +7,6 @@ class CategoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
       appBar: AppBar(
         title: Text(categoryId.substring(0, 1).toUpperCase() + categoryId.substring(1)),
@@ -25,7 +24,7 @@ class CategoryScreen extends StatelessWidget {
               subtitle: Padding(
                 padding: const EdgeInsets.only(top: 8),
                 child: Text(
-                  'Résumé de l\'article concernant le droit de la catégorie $categoryId.',
+                  'RÃ©sumÃ© de l\'article concernant le droit de la catÃ©gorie $categoryId.',
                   style: TextStyle(fontSize: 13, color: AppColors.grey600, height: 1.4),
                 ),
               ),

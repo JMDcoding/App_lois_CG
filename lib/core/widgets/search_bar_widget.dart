@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
 
-/// Barre de recherche stylisée Mobeko
+/// Barre de recherche stylisÃ©e Mobeko
 /// Avec support pour la recherche vocale
 class MobekoSearchBar extends StatelessWidget {
   final String hintText;
@@ -28,7 +28,6 @@ class MobekoSearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return Container(
       decoration: BoxDecoration(
         color: isDark ? AppColors.darkCard : AppColors.white,
@@ -40,7 +39,7 @@ class MobekoSearchBar extends StatelessWidget {
             ? null
             : [
                 BoxShadow(
-                  color: AppColors.forestGreen.withOpacity(0.05),
+                  color: AppColors.forestGreen.withValues(alpha: 0.05),
                   blurRadius: 10,
                   offset: const Offset(0, 4),
                 ),

@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+﻿import 'package:flutter/material.dart';
 import '../../../../core/constants/app_colors.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -12,7 +11,7 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   final _controller = TextEditingController();
   final _focusNode = FocusNode();
-  List<String> _suggestions = [];
+  final List<String> _suggestions = [];
 
   @override
   void initState() {
@@ -58,7 +57,7 @@ class _SearchScreenState extends State<SearchScreen> {
   }
 
   Widget _buildRecentSearches(bool isDark) {
-    final recent = ['Droit du travail', 'Passeport', 'Création d\'entreprise', 'Arrestation'];
+    final recent = ['Droit du travail', 'Passeport', 'CrÃ©ation d\'entreprise', 'Arrestation'];
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
@@ -72,7 +71,7 @@ class _SearchScreenState extends State<SearchScreen> {
           )).toList(),
         ),
         const SizedBox(height: 24),
-        Text('Catégories', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16)),
+        Text('CatÃ©gories', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16)),
         const SizedBox(height: 12),
         ...[
           _buildCategoryTile('Travail', Icons.work_outline_rounded),
@@ -93,9 +92,9 @@ class _SearchScreenState extends State<SearchScreen> {
           margin: const EdgeInsets.only(bottom: 8),
           child: ListTile(
             leading: Icon(Icons.article_outlined, color: AppColors.forestGreen),
-            title: Text('Résultat pour "${_controller.text}" (${index + 1})',
+            title: Text('RÃ©sultat pour "${_controller.text}" (${index + 1})',
                 style: const TextStyle(fontWeight: FontWeight.w500)),
-            subtitle: Text('Description du résultat de recherche...',
+            subtitle: Text('Description du rÃ©sultat de recherche...',
                 style: TextStyle(fontSize: 12, color: AppColors.grey500)),
             trailing: const Icon(Icons.arrow_forward_ios_rounded, size: 14),
             onTap: () {},

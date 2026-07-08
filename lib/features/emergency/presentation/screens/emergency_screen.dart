@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_routes.dart';
@@ -8,17 +8,17 @@ class EmergencyScreen extends StatelessWidget {
 
   static final _scenarios = [
     _Scenario('Arrestation', Icons.front_hand_rounded, AppColors.emergency,
-        'Vous êtes arrêté ou un proche est arrêté'),
+        'Vous Ãªtes arrÃªtÃ© ou un proche est arrÃªtÃ©'),
     _Scenario('Violence', Icons.warning_rounded, const Color(0xFFE76F51),
-        'Vous êtes victime de violence physique ou morale'),
+        'Vous Ãªtes victime de violence physique ou morale'),
     _Scenario('Expulsion', Icons.home_rounded, const Color(0xFFE9C46A),
-        'Vous êtes menacé d\'expulsion de votre logement'),
+        'Vous Ãªtes menacÃ© d\'expulsion de votre logement'),
     _Scenario('Accident', Icons.car_crash_rounded, const Color(0xFF457B9D),
         'Vous avez eu un accident de la route'),
     _Scenario('Arnaque', Icons.report_gmailerrorred_rounded, const Color(0xFFF4A261),
-        'Vous êtes victime d\'une arnaque ou escroquerie'),
+        'Vous Ãªtes victime d\'une arnaque ou escroquerie'),
     _Scenario('Litige foncier', Icons.terrain_rounded, const Color(0xFF2A9D8F),
-        'Conflit sur la propriété d\'un terrain'),
+        'Conflit sur la propriÃ©tÃ© d\'un terrain'),
   ];
 
   @override
@@ -49,11 +49,11 @@ class EmergencyScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Besoin d\'aide immédiate ?',
+                      Text('Besoin d\'aide immÃ©diate ?',
                           style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700,
                               color: AppColors.white)),
                       SizedBox(height: 4),
-                      Text('Sélectionnez votre situation ci-dessous',
+                      Text('SÃ©lectionnez votre situation ci-dessous',
                           style: TextStyle(fontSize: 13, color: Colors.white70)),
                     ],
                   ),
@@ -74,7 +74,7 @@ class EmergencyScreen extends StatelessWidget {
                     leading: Container(
                       width: 48, height: 48,
                       decoration: BoxDecoration(
-                        color: s.color.withOpacity(0.12),
+                        color: s.color.withValues(alpha: 0.12),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Icon(s.icon, color: s.color, size: 24),
@@ -126,7 +126,7 @@ class _EmergencyNumber extends StatelessWidget {
         Container(
           width: 48, height: 48,
           decoration: BoxDecoration(
-            color: AppColors.emergency.withOpacity(0.1),
+            color: AppColors.emergency.withValues(alpha: 0.1),
             shape: BoxShape.circle,
           ),
           child: Center(

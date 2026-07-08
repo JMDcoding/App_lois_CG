@@ -1,4 +1,4 @@
-/// Validateurs de formulaires réutilisables
+﻿/// Validateurs de formulaires rÃ©utilisables
 class Validators {
   Validators._();
 
@@ -16,13 +16,13 @@ class Validators {
     return null;
   }
 
-  /// Valide un mot de passe (minimum 6 caractères)
+  /// Valide un mot de passe (minimum 6 caractÃ¨res)
   static String? password(String? value) {
     if (value == null || value.isEmpty) {
       return 'Le mot de passe est requis';
     }
     if (value.length < 6) {
-      return 'Le mot de passe doit contenir au moins 6 caractères';
+      return 'Le mot de passe doit contenir au moins 6 caractÃ¨res';
     }
     return null;
   }
@@ -33,7 +33,7 @@ class Validators {
       return 'Le mot de passe est requis';
     }
     if (value.length < 8) {
-      return 'Le mot de passe doit contenir au moins 8 caractères';
+      return 'Le mot de passe doit contenir au moins 8 caractÃ¨res';
     }
     if (!value.contains(RegExp(r'[A-Z]'))) {
       return 'Le mot de passe doit contenir une majuscule';
@@ -63,27 +63,27 @@ class Validators {
     return null;
   }
 
-  /// Valide un numéro de téléphone congolais
+  /// Valide un numÃ©ro de tÃ©lÃ©phone congolais
   static String? phoneNumber(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Le numéro de téléphone est requis';
+      return 'Le numÃ©ro de tÃ©lÃ©phone est requis';
     }
     // Format congolais : +242 XX XXX XXXX ou 06 XXX XXXX
     final phoneRegex = RegExp(r'^(\+242|242)?[0-9]{9}$');
     final cleanNumber = value.replaceAll(RegExp(r'[\s\-()]'), '');
     if (!phoneRegex.hasMatch(cleanNumber)) {
-      return 'Veuillez entrer un numéro de téléphone valide';
+      return 'Veuillez entrer un numÃ©ro de tÃ©lÃ©phone valide';
     }
     return null;
   }
 
-  /// Valide un nom (minimum 2 caractères)
+  /// Valide un nom (minimum 2 caractÃ¨res)
   static String? name(String? value) {
     if (value == null || value.trim().isEmpty) {
       return 'Le nom est requis';
     }
     if (value.trim().length < 2) {
-      return 'Le nom doit contenir au moins 2 caractères';
+      return 'Le nom doit contenir au moins 2 caractÃ¨res';
     }
     return null;
   }
@@ -94,7 +94,7 @@ class Validators {
       return '$fieldName est requis';
     }
     if (value.length < min) {
-      return '$fieldName doit contenir au moins $min caractères';
+      return '$fieldName doit contenir au moins $min caractÃ¨res';
     }
     return null;
   }
@@ -102,7 +102,7 @@ class Validators {
   /// Valide une longueur maximale
   static String? maxLength(String? value, int max, {String fieldName = 'Ce champ'}) {
     if (value != null && value.length > max) {
-      return '$fieldName ne doit pas dépasser $max caractères';
+      return '$fieldName ne doit pas dÃ©passer $max caractÃ¨res';
     }
     return null;
   }

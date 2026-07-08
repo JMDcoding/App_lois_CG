@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "783087878041",
+    "project_id": "app-lois-congo-5ea4b",
+    "storage_bucket": "app-lois-congo-5ea4b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:783087878041:android:5b3b57747ce8e8fa545d08",
+        "android_client_info": {
+          "package_name": "com.mobeko.mobeko"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2A1qPG8DRWaYrV_2sHHf-H5ao-U-1stM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

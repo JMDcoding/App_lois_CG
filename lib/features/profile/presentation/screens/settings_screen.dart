@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import '../../../../core/constants/app_colors.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -7,32 +7,32 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Paramètres')),
+      appBar: AppBar(title: const Text('ParamÃ¨tres')),
       body: ListView(
         children: [
-          _SettingsSection(title: 'Général', children: [
+          _SettingsSection(title: 'GÃ©nÃ©ral', children: [
             SwitchListTile(value: true, onChanged: (_) {},
                 title: const Text('Notifications'), secondary: const Icon(Icons.notifications_outlined)),
             ListTile(leading: const Icon(Icons.language_rounded),
-                title: const Text('Langue'), subtitle: const Text('Français'),
+                title: const Text('Langue'), subtitle: const Text('FranÃ§ais'),
                 trailing: const Icon(Icons.arrow_forward_ios_rounded, size: 14), onTap: () {}),
             ListTile(leading: const Icon(Icons.dark_mode_rounded),
-                title: const Text('Thème'), subtitle: const Text('Système'),
+                title: const Text('ThÃ¨me'), subtitle: const Text('SystÃ¨me'),
                 trailing: const Icon(Icons.arrow_forward_ios_rounded, size: 14), onTap: () {}),
           ]),
-          _SettingsSection(title: 'Données', children: [
+          _SettingsSection(title: 'DonnÃ©es', children: [
             SwitchListTile(value: true, onChanged: (_) {},
                 title: const Text('Mode hors ligne'), secondary: const Icon(Icons.cloud_off_outlined)),
             ListTile(leading: const Icon(Icons.delete_outline_rounded),
                 title: const Text('Vider le cache'), onTap: () {}),
           ]),
-          _SettingsSection(title: 'Légal', children: [
+          _SettingsSection(title: 'LÃ©gal', children: [
             ListTile(leading: const Icon(Icons.privacy_tip_outlined),
-                title: const Text('Politique de confidentialité'), onTap: () {}),
+                title: const Text('Politique de confidentialitÃ©'), onTap: () {}),
             ListTile(leading: const Icon(Icons.description_outlined),
                 title: const Text('Conditions d\'utilisation'), onTap: () {}),
             ListTile(leading: const Icon(Icons.info_outline_rounded),
-                title: const Text('À propos de Mobeko'),
+                title: const Text('Ã€ propos de Mobeko'),
                 subtitle: const Text('Version 1.0.0'), onTap: () {}),
           ]),
         ],

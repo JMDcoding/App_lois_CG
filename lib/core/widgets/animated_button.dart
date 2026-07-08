@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
 
-/// Bouton animé avec gradient et effet de pression
+/// Bouton animÃ© avec gradient et effet de pression
 class AnimatedButton extends StatefulWidget {
   final String text;
   final VoidCallback? onPressed;
@@ -60,7 +60,6 @@ class _AnimatedButtonState extends State<AnimatedButton>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return GestureDetector(
       onTapDown: (_) => _controller.forward(),
       onTapUp: (_) {
@@ -93,7 +92,7 @@ class _AnimatedButtonState extends State<AnimatedButton>
                 ? null
                 : [
                     BoxShadow(
-                      color: AppColors.forestGreen.withOpacity(0.3),
+                      color: AppColors.forestGreen.withValues(alpha: 0.3),
                       blurRadius: 8,
                       offset: const Offset(0, 4),
                     ),

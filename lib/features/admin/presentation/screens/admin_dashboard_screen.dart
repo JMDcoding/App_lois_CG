@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import '../../../../core/constants/app_colors.dart';
 
 class AdminDashboardScreen extends StatelessWidget {
@@ -6,7 +6,6 @@ class AdminDashboardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
       appBar: AppBar(title: const Text('Administration')),
       body: SingleChildScrollView(
@@ -33,13 +32,13 @@ class AdminDashboardScreen extends StatelessWidget {
             const SizedBox(height: 24),
             const Text('Gestion', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
             const SizedBox(height: 12),
-            _AdminTile(title: 'Utilisateurs', subtitle: 'Gérer les comptes', icon: Icons.people_outlined, onTap: () {}),
+            _AdminTile(title: 'Utilisateurs', subtitle: 'GÃ©rer les comptes', icon: Icons.people_outlined, onTap: () {}),
             _AdminTile(title: 'Contenu juridique', subtitle: 'Publier lois et articles', icon: Icons.article_outlined, onTap: () {}),
-            _AdminTile(title: 'Actualités', subtitle: 'Publier des actualités', icon: Icons.newspaper_rounded, onTap: () {}),
-            _AdminTile(title: 'FAQ', subtitle: 'Gérer les questions fréquentes', icon: Icons.help_outline_rounded, onTap: () {}),
-            _AdminTile(title: 'Catégories', subtitle: 'Gérer les catégories', icon: Icons.category_outlined, onTap: () {}),
+            _AdminTile(title: 'ActualitÃ©s', subtitle: 'Publier des actualitÃ©s', icon: Icons.newspaper_rounded, onTap: () {}),
+            _AdminTile(title: 'FAQ', subtitle: 'GÃ©rer les questions frÃ©quentes', icon: Icons.help_outline_rounded, onTap: () {}),
+            _AdminTile(title: 'CatÃ©gories', subtitle: 'GÃ©rer les catÃ©gories', icon: Icons.category_outlined, onTap: () {}),
             _AdminTile(title: 'Notifications', subtitle: 'Envoyer des notifications push', icon: Icons.notifications_outlined, onTap: () {}),
-            _AdminTile(title: 'Statistiques', subtitle: 'Voir les statistiques détaillées', icon: Icons.analytics_outlined, onTap: () {}),
+            _AdminTile(title: 'Statistiques', subtitle: 'Voir les statistiques dÃ©taillÃ©es', icon: Icons.analytics_outlined, onTap: () {}),
           ],
         ),
       ),

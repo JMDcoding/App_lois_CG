@@ -1,9 +1,9 @@
-import 'package:hive_flutter/hive_flutter.dart';
+﻿import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 
 /// Service de stockage local utilisant Hive et SharedPreferences
-/// Hive pour les données structurées, SharedPreferences pour les préférences simples
+/// Hive pour les donnÃ©es structurÃ©es, SharedPreferences pour les prÃ©fÃ©rences simples
 class LocalStorageService {
   static const String _settingsBox = 'settings';
   static const String _cacheBox = 'cache';
@@ -26,32 +26,32 @@ class LocalStorageService {
     _prefs = await SharedPreferences.getInstance();
   }
 
-  // ═══════════════════════════════════════════════════════════
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
   // Settings (SharedPreferences)
-  // ═══════════════════════════════════════════════════════════
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
-  /// Langue sélectionnée
+  /// Langue sÃ©lectionnÃ©e
   String get language => _prefs.getString('language') ?? 'fr';
   Future<void> setLanguage(String lang) => _prefs.setString('language', lang);
 
-  /// Mode thème (system, light, dark)
+  /// Mode thÃ¨me (system, light, dark)
   String get themeMode => _prefs.getString('theme_mode') ?? 'system';
   Future<void> setThemeMode(String mode) => _prefs.setString('theme_mode', mode);
 
-  /// Première ouverture (onboarding)
+  /// PremiÃ¨re ouverture (onboarding)
   bool get isFirstLaunch => _prefs.getBool('first_launch') ?? true;
   Future<void> setFirstLaunchCompleted() => _prefs.setBool('first_launch', false);
 
-  /// Notifications activées
+  /// Notifications activÃ©es
   bool get notificationsEnabled => _prefs.getBool('notifications') ?? true;
   Future<void> setNotificationsEnabled(bool enabled) =>
       _prefs.setBool('notifications', enabled);
 
-  // ═══════════════════════════════════════════════════════════
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
   // Cache (Hive)
-  // ═══════════════════════════════════════════════════════════
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
-  /// Sauvegarde des données en cache avec expiration
+  /// Sauvegarde des donnÃ©es en cache avec expiration
   Future<void> cacheData(String key, dynamic data, {Duration? expiry}) async {
     final box = Hive.box(_cacheBox);
     final entry = {
@@ -62,7 +62,7 @@ class LocalStorageService {
     await box.put(key, entry);
   }
 
-  /// Récupère des données du cache
+  /// RÃ©cupÃ¨re des donnÃ©es du cache
   dynamic getCachedData(String key) {
     final box = Hive.box(_cacheBox);
     final entry = box.get(key);
@@ -72,7 +72,7 @@ class LocalStorageService {
     final timestamp = map['timestamp'] as int;
     final expiry = map['expiry'] as int?;
 
-    // Vérifier l'expiration
+    // VÃ©rifier l'expiration
     if (expiry != null) {
       final expiryTime = DateTime.fromMillisecondsSinceEpoch(timestamp + expiry);
       if (DateTime.now().isAfter(expiryTime)) {
@@ -84,7 +84,7 @@ class LocalStorageService {
     return jsonDecode(map['data'] as String);
   }
 
-  /// Supprime une entrée du cache
+  /// Supprime une entrÃ©e du cache
   Future<void> removeCachedData(String key) async {
     final box = Hive.box(_cacheBox);
     await box.delete(key);
@@ -96,9 +96,9 @@ class LocalStorageService {
     await box.clear();
   }
 
-  // ═══════════════════════════════════════════════════════════
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
   // Favoris (Hive)
-  // ═══════════════════════════════════════════════════════════
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
   /// Ajoute un favori
   Future<void> addFavorite(String type, Map<String, dynamic> item) async {
@@ -108,7 +108,7 @@ class LocalStorageService {
     await box.put(type, favorites);
   }
 
-  /// Récupère les favoris par type
+  /// RÃ©cupÃ¨re les favoris par type
   List<Map<String, dynamic>> getFavorites(String type) {
     final box = Hive.box(_favoritesBox);
     final favorites = box.get(type, defaultValue: []);
@@ -125,23 +125,23 @@ class LocalStorageService {
     await box.put(type, favorites);
   }
 
-  /// Vérifie si un élément est en favori
+  /// VÃ©rifie si un Ã©lÃ©ment est en favori
   bool isFavorite(String type, String id) {
     final favorites = getFavorites(type);
     return favorites.any((item) => item['id'] == id);
   }
 
-  // ═══════════════════════════════════════════════════════════
-  // Données hors ligne (Hive)
-  // ═══════════════════════════════════════════════════════════
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  // DonnÃ©es hors ligne (Hive)
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
-  /// Sauvegarde des données pour accès hors ligne
+  /// Sauvegarde des donnÃ©es pour accÃ¨s hors ligne
   Future<void> saveOfflineData(String key, dynamic data) async {
     final box = Hive.box(_offlineBox);
     await box.put(key, jsonEncode(data));
   }
 
-  /// Récupère des données hors ligne
+  /// RÃ©cupÃ¨re des donnÃ©es hors ligne
   dynamic getOfflineData(String key) {
     final box = Hive.box(_offlineBox);
     final data = box.get(key);
@@ -149,21 +149,21 @@ class LocalStorageService {
     return jsonDecode(data as String);
   }
 
-  // ═══════════════════════════════════════════════════════════
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
   // Historique (Hive)
-  // ═══════════════════════════════════════════════════════════
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
-  /// Ajoute une entrée à l'historique
+  /// Ajoute une entrÃ©e Ã  l'historique
   Future<void> addToHistory(String type, Map<String, dynamic> entry) async {
     final box = Hive.box(_historyBox);
     final history = List<Map>.from(box.get(type, defaultValue: []));
     history.insert(0, {...entry, 'timestamp': DateTime.now().toIso8601String()});
-    // Garder les 100 dernières entrées
+    // Garder les 100 derniÃ¨res entrÃ©es
     if (history.length > 100) history.removeLast();
     await box.put(type, history);
   }
 
-  /// Récupère l'historique
+  /// RÃ©cupÃ¨re l'historique
   List<Map<String, dynamic>> getHistory(String type) {
     final box = Hive.box(_historyBox);
     final history = box.get(type, defaultValue: []);

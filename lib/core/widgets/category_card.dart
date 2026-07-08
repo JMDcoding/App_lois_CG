@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
 
-/// Carte de catégorie avec icône et animation au tap
+/// Carte de catÃ©gorie avec icÃ´ne et animation au tap
 class CategoryCard extends StatelessWidget {
   final String title;
   final IconData icon;
@@ -49,7 +49,7 @@ class CategoryCard extends StatelessWidget {
             width: 56,
             height: 56,
             decoration: BoxDecoration(
-              color: icColor.withOpacity(0.1),
+              color: icColor.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(16),
             ),
             child: Icon(icon, color: icColor, size: 24),
@@ -102,7 +102,7 @@ class CategoryCard extends StatelessWidget {
                 width: 48,
                 height: 48,
                 decoration: BoxDecoration(
-                  color: icColor.withOpacity(0.1),
+                  color: icColor.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(14),
                 ),
                 child: Icon(icon, color: icColor, size: 24),

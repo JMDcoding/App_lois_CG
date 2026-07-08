@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/constants/app_colors.dart';
@@ -28,7 +28,6 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -53,7 +52,7 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
         children: [
           const SizedBox(height: 16),
           Text(
-            'Mot de passe oublié',
+            'Mot de passe oubliÃ©',
             style: TextStyle(
               fontFamily: 'Inter',
               fontSize: 28,
@@ -63,7 +62,7 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
           ),
           const SizedBox(height: 8),
           Text(
-            'Entrez votre email pour recevoir un lien de réinitialisation.',
+            'Entrez votre email pour recevoir un lien de rÃ©initialisation.',
             style: TextStyle(fontSize: 14, color: AppColors.grey500),
           ),
           const SizedBox(height: 32),
@@ -95,7 +94,7 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
           width: 80,
           height: 80,
           decoration: BoxDecoration(
-            color: AppColors.lightGreen.withOpacity(0.2),
+            color: AppColors.lightGreen.withValues(alpha: 0.2),
             shape: BoxShape.circle,
           ),
           child: const Icon(Icons.mark_email_read_rounded,
@@ -103,18 +102,18 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
         ),
         const SizedBox(height: 24),
         const Text(
-          'Email envoyé !',
+          'Email envoyÃ© !',
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
         ),
         const SizedBox(height: 12),
         Text(
-          'Vérifiez votre boîte de réception et suivez les instructions.',
+          'VÃ©rifiez votre boÃ®te de rÃ©ception et suivez les instructions.',
           style: TextStyle(fontSize: 14, color: AppColors.grey500),
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: 32),
         AnimatedButton(
-          text: 'Retour à la connexion',
+          text: 'Retour Ã  la connexion',
           onPressed: () => context.pop(),
         ),
       ],

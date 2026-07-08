@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../core/constants/app_routes.dart';
-import '../core/providers/firebase_providers.dart';
 import '../features/onboarding/presentation/screens/onboarding_screen.dart';
 import '../features/auth/presentation/screens/login_screen.dart';
 import '../features/auth/presentation/screens/register_screen.dart';
@@ -35,24 +34,17 @@ final _shellNavigatorKey = GlobalKey<NavigatorState>();
 
 /// Configuration du routeur GoRouter
 final routerProvider = Provider<GoRouter>((ref) {
-  final authState = ref.watch(authStateProvider);
-
   return GoRouter(
     navigatorKey: _rootNavigatorKey,
     initialLocation: AppRoutes.home,
     debugLogDiagnostics: true,
     redirect: (context, state) {
-      final isLoggedIn = authState.valueOrNull != null;
-      final isAuthRoute = state.matchedLocation == AppRoutes.login ||
-          state.matchedLocation == AppRoutes.register ||
-          state.matchedLocation == AppRoutes.phoneAuth ||
-          state.matchedLocation == AppRoutes.forgotPassword;
       final isOnboarding = state.matchedLocation == AppRoutes.onboarding;
 
       // Pas de redirection si onboarding
       if (isOnboarding) return null;
 
-      // Pas besoin d'être connecté pour utiliser l'app (connexion anonyme)
+      // Pas besoin d'ÃƒÂªtre connectÃƒÂ© pour utiliser l'app (connexion anonyme)
       // La redirection est optionnelle
       return null;
     },

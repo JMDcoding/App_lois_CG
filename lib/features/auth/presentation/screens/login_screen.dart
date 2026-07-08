@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/constants/app_colors.dart';
@@ -7,7 +7,7 @@ import '../../../../core/widgets/animated_button.dart';
 import '../../../../core/utils/validators.dart';
 import '../providers/auth_provider.dart';
 
-/// Écran de connexion
+/// Ã‰cran de connexion
 class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
 
@@ -32,7 +32,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -54,7 +53,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
-                            color: AppColors.forestGreen.withOpacity(0.3),
+                            color: AppColors.forestGreen.withValues(alpha: 0.3),
                             blurRadius: 20,
                             offset: const Offset(0, 8),
                           ),
@@ -79,7 +78,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      'La loi à portée de main',
+                      'La loi Ã  portÃ©e de main',
                       style: TextStyle(
                         fontFamily: 'Inter',
                         fontSize: 14,
@@ -109,7 +108,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      'Accédez à votre espace juridique',
+                      'AccÃ©dez Ã  votre espace juridique',
                       style: TextStyle(
                         fontFamily: 'Inter',
                         fontSize: 14,
@@ -155,7 +154,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                       alignment: Alignment.centerRight,
                       child: TextButton(
                         onPressed: () => context.push(AppRoutes.forgotPassword),
-                        child: const Text('Mot de passe oublié ?'),
+                        child: const Text('Mot de passe oubliÃ© ?'),
                       ),
                     ),
 
@@ -202,7 +201,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
 
                     // Phone
                     _SocialButton(
-                      text: 'Continuer avec le téléphone',
+                      text: 'Continuer avec le tÃ©lÃ©phone',
                       icon: Icons.phone_android_rounded,
                       onPressed: () => context.push(AppRoutes.phoneAuth),
                       isDark: isDark,
@@ -211,7 +210,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
 
                     // Anonymous
                     _SocialButton(
-                      text: 'Continuer en tant qu\'invité',
+                      text: 'Continuer en tant qu\'invitÃ©',
                       icon: Icons.person_outline_rounded,
                       onPressed: _handleAnonymousLogin,
                       isDark: isDark,
@@ -328,6 +327,7 @@ class _SocialButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Material(
       color: isDark ? AppColors.darkCard : AppColors.white,
       borderRadius: BorderRadius.circular(12),
