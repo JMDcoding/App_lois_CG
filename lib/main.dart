@@ -27,11 +27,13 @@ Future<void> main() async {
     ),
   );
 
-  // Initialiser Firebase
-  if (Firebase.apps.isEmpty) {
+  // Initialiser Firebase (avec try/catch car l'auto-initialisation native peut créer un conflit)
+  try {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
+  } catch (e) {
+    debugPrint('Firebase dÃ©jÃ  initialisÃ© ou erreur : $e');
   }
 
   // Initialiser Hive pour le stockage local

@@ -1,4 +1,4 @@
-﻿import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 
 /// Service de notifications push via Firebase Cloud Messaging
@@ -27,8 +27,12 @@ class NotificationService {
     }
 
     // Obtenir le token FCM
-    final token = await _messaging.getToken();
-    debugPrint('FCM Token: $token');
+    try {
+      final token = await _messaging.getToken();
+      debugPrint('FCM Token: $token');
+    } catch (e) {
+      debugPrint('Erreur lors de la rÃ©cupÃ©ration du token FCM : $e');
+    }
 
     // Ã‰couter les changements de token
     _messaging.onTokenRefresh.listen((newToken) {
@@ -45,19 +49,32 @@ class NotificationService {
 
   /// Obtient le token FCM actuel
   Future<String?> getToken() async {
-    return await _messaging.getToken();
+    try {
+      return await _messaging.getToken();
+    } catch (e) {
+      debugPrint('Erreur FCM getToken: $e');
+      return null;
+    }
   }
 
   /// S'abonner Ã  un topic
   Future<void> subscribeToTopic(String topic) async {
-    await _messaging.subscribeToTopic(topic);
-    debugPrint('AbonnÃ© au topic: $topic');
+    try {
+      await _messaging.subscribeToTopic(topic);
+      debugPrint('AbonnÃ© au topic: $topic');
+    } catch (e) {
+      debugPrint('Erreur lors de l\'abonnement au topic $topic : $e');
+    }
   }
 
   /// Se dÃ©sabonner d'un topic
   Future<void> unsubscribeFromTopic(String topic) async {
-    await _messaging.unsubscribeFromTopic(topic);
-    debugPrint('DÃ©sabonnÃ© du topic: $topic');
+    try {
+      await _messaging.unsubscribeFromTopic(topic);
+      debugPrint('DÃ©sabonnÃ© du topic: $topic');
+    } catch (e) {
+      debugPrint('Erreur lors du dÃ©sabonnement du topic $topic : $e');
+    }
   }
 
   /// Abonnements par dÃ©faut
