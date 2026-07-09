@@ -35,8 +35,6 @@ class MobekoApp extends ConsumerWidget {
       supportedLocales: const [
         Locale('fr'),      // Français
         Locale('en'),      // Anglais
-        Locale('ln'),      // Lingala
-        Locale('kg'),      // Kituba
       ],
       localizationsDelegates: [
         AppLocalizations.delegate,

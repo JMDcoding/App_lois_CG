@@ -55,7 +55,7 @@ class _HeroSection extends StatelessWidget {
                     ),
                     const SizedBox(height: 24),
                     Text(
-                      'Mobeko est votre assistant juridique intelligent pour la République du Congo. Naviguez facilement dans les textes de loi, effectuez vos démarches et obtenez des réponses claires en français, lingala, kituba et anglais.',
+                      'Mobeko est votre assistant juridique intelligent pour la République du Congo. Naviguez facilement dans les textes de loi, effectuez vos démarches et obtenez des réponses claires en français et en anglais.',
                       style: TextStyle(
                         fontSize: 18,
                         height: 1.6,

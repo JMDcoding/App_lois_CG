@@ -19,8 +19,6 @@ class SettingsScreen extends ConsumerWidget {
     
     String languageString = 'Français 🇫🇷';
     if (locale.languageCode == 'en') languageString = 'English 🇬🇧';
-    if (locale.languageCode == 'ln') languageString = 'Lingala 🇨🇩';
-    if (locale.languageCode == 'kg') languageString = 'Kituba 🇨🇬';
     return Scaffold(
       appBar: AppBar(title: const Text('Paramètres')),
       body: ResponsiveMaxWidth(
@@ -43,8 +41,6 @@ class SettingsScreen extends ConsumerWidget {
                           children: [
                             ListTile(title: const Text('Français 🇫🇷'), onTap: () { ref.read(localeProvider.notifier).setLocale('fr'); Navigator.pop(context); }),
                             ListTile(title: const Text('English 🇬🇧'), onTap: () { ref.read(localeProvider.notifier).setLocale('en'); Navigator.pop(context); }),
-                            ListTile(title: const Text('Lingala 🇨🇩'), onTap: () { ref.read(localeProvider.notifier).setLocale('ln'); Navigator.pop(context); }),
-                            ListTile(title: const Text('Kituba 🇨🇬'), onTap: () { ref.read(localeProvider.notifier).setLocale('kg'); Navigator.pop(context); }),
                           ],
                         ),
                       ),
