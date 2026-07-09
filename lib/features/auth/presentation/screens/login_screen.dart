@@ -49,7 +49,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                       width: 72,
                       height: 72,
                       decoration: BoxDecoration(
-                        gradient: AppColors.primaryGradient,
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
@@ -59,10 +58,12 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                           ),
                         ],
                       ),
-                      child: const Icon(
-                        Icons.gavel_rounded,
-                        color: AppColors.white,
-                        size: 36,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image.asset(
+                          'assets/images/logo/logo.jpeg',
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                     const SizedBox(height: 16),
