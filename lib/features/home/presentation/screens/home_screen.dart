@@ -11,7 +11,7 @@ import '../../../../core/providers/firebase_providers.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-/// Ã‰cran d'accueil principal Mobeko
+/// Écran d'accueil principal Mobeko
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
 
@@ -39,7 +39,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       context: context,
       barrierDismissible: false,
       builder: (context) => AlertDialog(
-        title: const Text('Nouvelles Lois en Vigueur ðŸ‡¨ðŸ‡¬'),
+        title: const Text('Nouvelles Lois en Vigueur 🇨🇬'),
         content: const Text(
           'De nouvelles lois ont été promulguées. Vous pouvez les consulter directement sur le site officiel.',
         ),
@@ -182,7 +182,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                     _buildCategoryChip(context, 'Police', Icons.local_police_outlined),
                     _buildCategoryChip(context, 'Justice', Icons.gavel_rounded),
                     _buildCategoryChip(context, 'Santé', Icons.health_and_safety_outlined),
-                    _buildCategoryChip(context, 'Ã‰ducation', Icons.school_outlined),
+                    _buildCategoryChip(context, 'Éducation', Icons.school_outlined),
                     _buildCategoryChip(context, 'Fiscalité', Icons.account_balance_outlined),
                     _buildCategoryChip(context, 'Entreprises', Icons.business_center_outlined),
                   ],

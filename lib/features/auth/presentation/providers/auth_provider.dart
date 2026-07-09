@@ -2,10 +2,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../../../../core/providers/firebase_providers.dart';
 
-/// Ã‰tat d'authentification
+/// État d'authentification
 enum AuthStatus { initial, loading, authenticated, unauthenticated, error }
 
-/// Ã‰tat de l'authentification
+/// État de l'authentification
 class AuthState {
   final AuthStatus status;
   final User? user;
@@ -35,7 +35,7 @@ class AuthNotifier extends StateNotifier<AuthState> {
   final FirebaseAuth _auth;
 
   AuthNotifier(this._auth) : super(const AuthState()) {
-    // Ã‰couter les changements d'état d'authentification
+    // Écouter les changements d'état d'authentification
     _auth.authStateChanges().listen((user) {
       if (user != null) {
         state = AuthState(status: AuthStatus.authenticated, user: user);

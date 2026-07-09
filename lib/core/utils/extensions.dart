@@ -83,7 +83,7 @@ extension DateTimeExtension on DateTime {
     final now = DateTime.now();
     final diff = now.difference(this);
 
-    if (diff.inSeconds < 60) return 'Ã€ l\'instant';
+    if (diff.inSeconds < 60) return 'À l\'instant';
     if (diff.inMinutes < 60) return 'Il y a ${diff.inMinutes} min';
     if (diff.inHours < 24) return 'Il y a ${diff.inHours}h';
     if (diff.inDays < 2) return 'Hier';

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../core/constants/app_colors.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
-/// Ã‰cran de chat avec l'assistant juridique IA
+/// Écran de chat avec l'assistant juridique IA
 class ChatScreen extends ConsumerStatefulWidget {
   const ChatScreen({super.key});
 
@@ -23,10 +24,10 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
     _messages.add(_ChatMessage(
       text: 'Bonjour ! ðŸ‘‹ Je suis votre assistant juridique Mobeko.\n\n'
           'Je peux vous aider à :\n'
-          'â€¢ Comprendre vos droits\n'
-          'â€¢ Expliquer les lois congolaises\n'
-          'â€¢ Guider vos démarches\n'
-          'â€¢ Générer des checklists\n\n'
+          '• Comprendre vos droits\n'
+          '• Expliquer les lois congolaises\n'
+          '• Guider vos démarches\n'
+          '• Générer des checklists\n\n'
           'Comment puis-je vous aider aujourd\'hui ?',
       isUser: false,
       timestamp: DateTime.now(),
@@ -44,7 +45,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
-      appBar: AppBar(
+      appBar: kIsWeb ? null : AppBar(
         title: Row(
           children: [
             Container(
@@ -71,7 +72,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
                   ),
                 ),
                 Text(
-                  _isTyping ? 'En train d\'écrire...' : 'En ligne',
+                  _isTyping ? "En train d'écrire..." : 'En ligne',
                   style: TextStyle(
                     fontFamily: 'Inter',
                     fontSize: 11,
@@ -90,8 +91,11 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
           ),
         ],
       ),
-      body: Column(
-        children: [
+      body: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 1200),
+          child: Column(
+            children: [
           // Messages
           Expanded(
             child: ListView.builder(
@@ -136,6 +140,8 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
           ),
         ],
       ),
+      ),
+      ),
     );
   }
 
@@ -179,12 +185,12 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
         '1. **Cadre juridique** : Selon la Constitution de la République du Congo '
         'et le Code civil, vos droits sont protégés.\n\n'
         '2. **Démarches recommandées** :\n'
-        '   â€¢ Rassemblez les documents nécessaires\n'
-        '   â€¢ Contactez l\'organisme compétent\n'
-        '   â€¢ Respectez les délais légaux\n\n'
+        '   • Rassemblez les documents nécessaires\n'
+        '   • Contactez l\'organisme compétent\n'
+        '   • Respectez les délais légaux\n\n'
         '3. **Organismes compétents** :\n'
-        '   â€¢ Tribunal de Grande Instance\n'
-        '   â€¢ Préfecture de votre localité\n\n'
+        '   • Tribunal de Grande Instance\n'
+        '   • Préfecture de votre localité\n\n'
         'âš ï¸ *Cette réponse est fournie à titre informatif et ne remplace pas '
         'un conseil juridique personnalisé.*';
   }

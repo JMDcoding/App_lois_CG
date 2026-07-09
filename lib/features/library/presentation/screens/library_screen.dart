@@ -3,7 +3,9 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_routes.dart';
 import '../../../../core/widgets/category_card.dart';
-
+import '../../../../core/widgets/responsive_layout.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
+import '../../../../web/web_scaffold.dart';
 class LibraryScreen extends StatelessWidget {
   const LibraryScreen({super.key});
 
@@ -14,7 +16,7 @@ class LibraryScreen extends StatelessWidget {
     _Cat('Police', Icons.local_police_outlined, 'Contrôles, arrestations, garde à vue'),
     _Cat('Justice', Icons.gavel_rounded, 'Tribunaux, procédures, appel'),
     _Cat('Santé', Icons.health_and_safety_outlined, 'Droits des patients, assurance'),
-    _Cat('Ã‰ducation', Icons.school_outlined, 'Scolarité, bourses, diplômes'),
+    _Cat('Éducation', Icons.school_outlined, 'Scolarité, bourses, diplômes'),
     _Cat('Fiscalité', Icons.account_balance_outlined, 'Impôts, TVA, déclarations'),
     _Cat('Entreprises', Icons.business_center_outlined, 'Création, gestion, fermeture'),
     _Cat('Enfants', Icons.child_care_rounded, 'Protection, scolarité, adoption'),
@@ -28,24 +30,39 @@ class LibraryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    return Scaffold(
-      body: CustomScrollView(
+    final scrollBody = CustomScrollView(
         slivers: [
-          SliverAppBar(
-            floating: true,
-            title: Text('Bibliothèque Juridique',
-                style: TextStyle(
-                  fontFamily: 'Inter',
-                  fontWeight: FontWeight.w700,
-                  color: isDark ? AppColors.white : AppColors.darkGreen,
-                )),
-            actions: [
-              IconButton(
-                onPressed: () => context.push(AppRoutes.search),
-                icon: const Icon(Icons.search_rounded),
+          if (!kIsWeb)
+            SliverAppBar(
+              floating: true,
+              title: Text('Bibliothèque Juridique',
+                  style: TextStyle(
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w700,
+                    color: isDark ? AppColors.white : AppColors.darkGreen,
+                  )),
+              actions: [
+                IconButton(
+                  onPressed: () => context.push(AppRoutes.search),
+                  icon: const Icon(Icons.search_rounded),
+                ),
+              ],
+            ),
+          if (kIsWeb)
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 40, bottom: 20, left: 16),
+                child: Text(
+                  'Bibliothèque Juridique',
+                  style: TextStyle(
+                    fontFamily: 'Inter',
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                    color: isDark ? AppColors.white : AppColors.darkGreen,
+                  ),
+                ),
               ),
-            ],
-          ),
+            ),
           SliverPadding(
             padding: const EdgeInsets.all(16),
             sliver: SliverGrid(
@@ -69,10 +86,21 @@ class LibraryScreen extends StatelessWidget {
               ),
             ),
           ),
-          const SliverToBoxAdapter(child: SizedBox(height: 80)),
+          if (kIsWeb) const SliverToBoxAdapter(child: WebFooter()),
         ],
-      ),
-    );
+      );
+
+    if (kIsWeb) {
+      return Scaffold(
+        body: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 1200),
+            child: scrollBody,
+          ),
+        ),
+      );
+    }
+    return Scaffold(body: scrollBody);
   }
 }
 

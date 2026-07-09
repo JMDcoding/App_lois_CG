@@ -7,7 +7,7 @@ import '../../../../core/widgets/animated_button.dart';
 import '../../../../core/utils/validators.dart';
 import '../providers/auth_provider.dart';
 
-/// Ã‰cran de connexion
+/// Écran de connexion
 class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
 

@@ -1,4 +1,4 @@
-﻿import 'package:intl/intl.dart';
+import 'package:intl/intl.dart';
 
 /// Utilitaire de formatage de dates pour le contexte congolais
 class DateFormatter {
@@ -36,7 +36,7 @@ class DateFormatter {
       return long(date);
     }
 
-    if (diff.inSeconds < 60) return 'Ã€ l\'instant';
+    if (diff.inSeconds < 60) return 'À l\'instant';
     if (diff.inMinutes < 60) return 'Il y a ${diff.inMinutes} min';
     if (diff.inHours < 24) return 'Il y a ${diff.inHours}h';
     if (diff.inDays == 1) return 'Hier';

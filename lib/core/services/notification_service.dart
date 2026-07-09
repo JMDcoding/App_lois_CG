@@ -34,7 +34,7 @@ class NotificationService {
       debugPrint('Erreur lors de la récupération du token FCM : $e');
     }
 
-    // Ã‰couter les changements de token
+    // Écouter les changements de token
     _messaging.onTokenRefresh.listen((newToken) {
       debugPrint('FCM Token rafraîchi: $newToken');
       // TODO: Sauvegarder le nouveau token dans Firestore

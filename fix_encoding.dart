@@ -16,6 +16,12 @@ final Map<String, String> replacements = {
   'ÃƒÂ¨': 'è',
   'ÃƒÂ': 'à',
   'Ãƒ': 'à',
+  'Ã‰': 'É',
+  'Ã€': 'À',
+  'â€¢': '•',
+  'ðŸ‡¨ðŸ‡¬': '🇨🇬',
+  'ðŸš¨': '🚨',
+  'ðŸ’¡': '💡',
   "l\\'applique": "l\\'application",
   "applique": "application"
 };

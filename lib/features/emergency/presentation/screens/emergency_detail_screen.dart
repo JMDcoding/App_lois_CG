@@ -20,7 +20,7 @@ class EmergencyDetailScreen extends StatelessWidget {
               'Vous pouvez prévenir votre famille',
               'Toute violence est interdite',
             ]),
-            _Section(title: 'ðŸš¨ Actions immédiates', items: [
+            _Section(title: '🚨 Actions immédiates', items: [
               'Restez calme et coopérez',
               'Notez les noms et matricules',
               'Contactez un proche',
@@ -33,10 +33,10 @@ class EmergencyDetailScreen extends StatelessWidget {
               'Commission des droits de l\'homme',
             ]),
             _Section(title: 'ðŸ“‹ Procédure', items: [
-              'Ã‰tape 1: Restez calme',
-              'Ã‰tape 2: Demandez à voir l\'officier',
-              'Ã‰tape 3: Exigez un PV',
-              'Ã‰tape 4: Contactez un avocat sous 24h',
+              'Étape 1: Restez calme',
+              'Étape 2: Demandez à voir l\'officier',
+              'Étape 3: Exigez un PV',
+              'Étape 4: Contactez un avocat sous 24h',
             ]),
             Container(
               padding: const EdgeInsets.all(16),
@@ -76,7 +76,7 @@ class _Section extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('â€¢ ', style: TextStyle(fontSize: 16, color: AppColors.forestGreen)),
+                const Text('• ', style: TextStyle(fontSize: 16, color: AppColors.forestGreen)),
                 Expanded(child: Text(item, style: const TextStyle(fontSize: 14, height: 1.4))),
               ],
             ),

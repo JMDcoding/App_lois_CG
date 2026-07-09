@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../core/constants/app_colors.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 class MapScreen extends StatelessWidget {
   const MapScreen({super.key});
@@ -8,13 +9,16 @@ class MapScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
-      appBar: AppBar(
+      appBar: kIsWeb ? null : AppBar(
         title: Text('Carte Interactive',
             style: TextStyle(fontWeight: FontWeight.w700,
                 color: isDark ? AppColors.white : AppColors.darkGreen)),
       ),
-      body: Column(
-        children: [
+      body: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 1200),
+          child: Column(
+            children: [
           // Category filters
           SizedBox(
             height: 50,
@@ -56,6 +60,8 @@ class MapScreen extends StatelessWidget {
             ),
           ),
         ],
+      ),
+      ),
       ),
     );
   }

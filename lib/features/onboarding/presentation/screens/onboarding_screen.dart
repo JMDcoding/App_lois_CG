@@ -4,7 +4,7 @@ import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_routes.dart';
 import '../../../../core/widgets/animated_button.dart';
 
-/// Ã‰cran d'onboarding avec 3 pages animées
+/// Écran d'onboarding avec 3 pages animées
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
 

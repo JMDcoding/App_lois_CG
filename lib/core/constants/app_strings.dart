@@ -41,7 +41,7 @@ class AppStrings {
   static const String categoryPolice = 'Police';
   static const String categoryJustice = 'Justice';
   static const String categoryHealth = 'Santé';
-  static const String categoryEducation = 'Ã‰ducation';
+  static const String categoryEducation = 'Éducation';
   static const String categoryTax = 'Fiscalité';
   static const String categoryBusiness = 'Entreprises';
   static const String categoryChildren = 'Enfants';

@@ -26,7 +26,7 @@ class ArticleDetailScreen extends StatelessWidget {
             _buildTab(context, 'Explication simple', Icons.lightbulb_outline_rounded,
                 'Voici une explication en termes simples de ce que cette loi signifie pour vous.'),
             _buildTab(context, 'Exemples', Icons.format_list_bulleted_rounded,
-                'â€¢ Exemple 1: Situation concrète\nâ€¢ Exemple 2: Cas pratique'),
+                '• Exemple 1: Situation concrète\n• Exemple 2: Cas pratique'),
             _buildTab(context, 'Articles de loi', Icons.article_outlined,
                 'Article 123 du Code Civil : "Le texte exact de l\'article..."'),
           ],

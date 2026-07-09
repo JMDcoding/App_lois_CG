@@ -22,7 +22,7 @@ class ProcedureDetailScreen extends StatelessWidget {
             _CheckItem('Justificatif de domicile'),
             _CheckItem('Formulaire de demande rempli'),
             const SizedBox(height: 24),
-            const Text('Ã‰tapes', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
+            const Text('Étapes', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
             const SizedBox(height: 12),
             _StepItem(1, 'Rassembler les documents', 'Préparez tous les documents listés ci-dessus.'),
             _StepItem(2, 'Se rendre au bureau compétent', 'Allez à la préfecture ou sous-préfecture de votre localité.'),
@@ -39,11 +39,11 @@ class ProcedureDetailScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text('ðŸ’¡ Conseils', style: TextStyle(fontWeight: FontWeight.w700)),
+                  const Text('💡 Conseils', style: TextStyle(fontWeight: FontWeight.w700)),
                   const SizedBox(height: 8),
-                  Text('â€¢ Faites des copies de tous vos documents\n'
-                      'â€¢ Arrivez tôt pour éviter la file d\'attente\n'
-                      'â€¢ Vérifiez les horaires d\'ouverture',
+                  Text('• Faites des copies de tous vos documents\n'
+                      '• Arrivez tôt pour éviter la file d\'attente\n'
+                      '• Vérifiez les horaires d\'ouverture',
                       style: TextStyle(fontSize: 13, height: 1.6, color: AppColors.grey700)),
                 ],
               ),

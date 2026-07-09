@@ -5,6 +5,8 @@ import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_routes.dart';
 import '../../../../core/providers/firebase_providers.dart';
 import '../../../auth/presentation/providers/auth_provider.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
+import '../../../../web/web_scaffold.dart';
 
 class ProfileScreen extends ConsumerWidget {
   const ProfileScreen({super.key});
@@ -13,8 +15,7 @@ class ProfileScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final user = ref.watch(currentUserProvider);
 
-    return Scaffold(
-      body: CustomScrollView(
+    final scrollBody = CustomScrollView(
         slivers: [
           SliverAppBar(
             expandedHeight: 200,
@@ -68,7 +69,7 @@ class ProfileScreen extends ConsumerWidget {
                       trailing: 'Français', onTap: () {}),
                   _ProfileTile(icon: Icons.dark_mode_rounded, title: 'Thème',
                       trailing: 'Système', onTap: () {}),
-                  _ProfileTile(icon: Icons.info_outline_rounded, title: 'Ã€ propos',
+                  _ProfileTile(icon: Icons.info_outline_rounded, title: 'À propos',
                       onTap: () {}),
                   const SizedBox(height: 16),
                   if (user != null && !user.isAnonymous)
@@ -105,9 +106,21 @@ class ProfileScreen extends ConsumerWidget {
               ),
             ),
           ),
+          if (kIsWeb) const SliverToBoxAdapter(child: WebFooter()),
         ],
-      ),
-    );
+      );
+
+    if (kIsWeb) {
+      return Scaffold(
+        body: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 1200),
+            child: scrollBody,
+          ),
+        ),
+      );
+    }
+    return Scaffold(body: scrollBody);
   }
 }
 
