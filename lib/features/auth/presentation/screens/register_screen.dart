@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/constants/app_colors.dart';
@@ -51,7 +51,7 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'CrÃ©er un compte',
+                  'Créer un compte',
                   style: TextStyle(
                     fontFamily: 'Inter',
                     fontSize: 28,
@@ -62,7 +62,7 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  'Rejoignez la communautÃ© Mobeko',
+                  'Rejoignez la communauté Mobeko',
                   style: TextStyle(fontSize: 14, color: AppColors.grey500),
                 ),
                 const SizedBox(height: 32),
@@ -117,7 +117,7 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                 ),
                 const SizedBox(height: 32),
                 AnimatedButton(
-                  text: 'CrÃ©er mon compte',
+                  text: 'Créer mon compte',
                   isLoading: _isLoading,
                   onPressed: _handleRegister,
                 ),
@@ -126,7 +126,7 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text('DÃ©jÃ  un compte ? ',
+                      Text('Déjà un compte ? ',
                           style: TextStyle(fontSize: 14, color: AppColors.grey600)),
                       GestureDetector(
                         onTap: () => context.pop(),

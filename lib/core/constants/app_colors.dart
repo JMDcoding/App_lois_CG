@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// Palette de couleurs Mobeko
-/// InspirÃ©e des couleurs du drapeau et de la nature congolaise
+/// Inspirée des couleurs du drapeau et de la nature congolaise
 class AppColors {
   AppColors._();
 
@@ -9,7 +9,7 @@ class AppColors {
   // Couleurs principales
   // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
-  /// Vert foncÃ© - Couleur primaire profonde
+  /// Vert foncé - Couleur primaire profonde
   static const Color darkGreen = Color(0xFF081C15);
 
   /// Vert principal (Drapeau Congo)
@@ -25,10 +25,10 @@ class AppColors {
   static const Color white = Color(0xFFFFFFFF);
 
   // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-  // Variantes supplÃ©mentaires
+  // Variantes supplémentaires
   // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
-  /// Vert trÃ¨s clair pour les backgrounds
+  /// Vert très clair pour les backgrounds
   static const Color mintGreen = Color(0xFFB7E4C7);
 
   /// Vert pastel pour les surfaces
@@ -50,7 +50,7 @@ class AppColors {
   /// Bleu information
   static const Color info = Color(0xFF457B9D);
 
-  /// Vert succÃ¨s
+  /// Vert succès
   static const Color success = Color(0xFF2D6A4F);
 
   // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•

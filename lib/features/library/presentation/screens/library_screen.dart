@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_routes.dart';
@@ -10,19 +10,19 @@ class LibraryScreen extends StatelessWidget {
   static final _categories = [
     _Cat('Travail', Icons.work_outline_rounded, 'Droit du travail, contrats, licenciement'),
     _Cat('Famille', Icons.family_restroom_rounded, 'Mariage, divorce, filiation'),
-    _Cat('Logement', Icons.home_work_outlined, 'Location, propriÃ©tÃ©, expulsion'),
-    _Cat('Police', Icons.local_police_outlined, 'ContrÃ´les, arrestations, garde Ã  vue'),
-    _Cat('Justice', Icons.gavel_rounded, 'Tribunaux, procÃ©dures, appel'),
-    _Cat('SantÃ©', Icons.health_and_safety_outlined, 'Droits des patients, assurance'),
-    _Cat('Ã‰ducation', Icons.school_outlined, 'ScolaritÃ©, bourses, diplÃ´mes'),
-    _Cat('FiscalitÃ©', Icons.account_balance_outlined, 'ImpÃ´ts, TVA, dÃ©clarations'),
-    _Cat('Entreprises', Icons.business_center_outlined, 'CrÃ©ation, gestion, fermeture'),
-    _Cat('Enfants', Icons.child_care_rounded, 'Protection, scolaritÃ©, adoption'),
-    _Cat('Femmes', Icons.woman_rounded, 'Droits, protection, Ã©galitÃ©'),
+    _Cat('Logement', Icons.home_work_outlined, 'Location, propriété, expulsion'),
+    _Cat('Police', Icons.local_police_outlined, 'Contrôles, arrestations, garde à vue'),
+    _Cat('Justice', Icons.gavel_rounded, 'Tribunaux, procédures, appel'),
+    _Cat('Santé', Icons.health_and_safety_outlined, 'Droits des patients, assurance'),
+    _Cat('Ã‰ducation', Icons.school_outlined, 'Scolarité, bourses, diplômes'),
+    _Cat('Fiscalité', Icons.account_balance_outlined, 'Impôts, TVA, déclarations'),
+    _Cat('Entreprises', Icons.business_center_outlined, 'Création, gestion, fermeture'),
+    _Cat('Enfants', Icons.child_care_rounded, 'Protection, scolarité, adoption'),
+    _Cat('Femmes', Icons.woman_rounded, 'Droits, protection, égalité'),
     _Cat('Consommateurs', Icons.shopping_bag_outlined, 'Achats, garanties, litiges'),
-    _Cat('Successions', Icons.account_tree_outlined, 'HÃ©ritage, testament, partage'),
-    _Cat('PropriÃ©tÃ©', Icons.real_estate_agent_outlined, 'Terrain, cadastre, bornage'),
-    _Cat('Contrats', Icons.description_outlined, 'RÃ©daction, exÃ©cution, rÃ©siliation'),
+    _Cat('Successions', Icons.account_tree_outlined, 'Héritage, testament, partage'),
+    _Cat('Propriété', Icons.real_estate_agent_outlined, 'Terrain, cadastre, bornage'),
+    _Cat('Contrats', Icons.description_outlined, 'Rédaction, exécution, résiliation'),
   ];
 
   @override
@@ -33,7 +33,7 @@ class LibraryScreen extends StatelessWidget {
         slivers: [
           SliverAppBar(
             floating: true,
-            title: Text('BibliothÃ¨que Juridique',
+            title: Text('Bibliothèque Juridique',
                 style: TextStyle(
                   fontFamily: 'Inter',
                   fontWeight: FontWeight.w700,

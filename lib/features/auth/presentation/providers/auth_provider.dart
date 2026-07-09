@@ -1,4 +1,4 @@
-﻿import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../../../../core/providers/firebase_providers.dart';
 
@@ -30,12 +30,12 @@ class AuthState {
   }
 }
 
-/// Notifier pour gÃ©rer l'authentification
+/// Notifier pour gérer l'authentification
 class AuthNotifier extends StateNotifier<AuthState> {
   final FirebaseAuth _auth;
 
   AuthNotifier(this._auth) : super(const AuthState()) {
-    // Ã‰couter les changements d'Ã©tat d'authentification
+    // Ã‰couter les changements d'état d'authentification
     _auth.authStateChanges().listen((user) {
       if (user != null) {
         state = AuthState(status: AuthStatus.authenticated, user: user);
@@ -98,7 +98,7 @@ class AuthNotifier extends StateNotifier<AuthState> {
     }
   }
 
-  /// Connexion avec tÃ©lÃ©phone
+  /// Connexion avec téléphone
   Future<void> signInWithPhone(String verificationId, String smsCode) async {
     state = state.copyWith(status: AuthStatus.loading);
     try {
@@ -111,13 +111,13 @@ class AuthNotifier extends StateNotifier<AuthState> {
     } catch (e) {
       state = AuthState(
         status: AuthStatus.error,
-        errorMessage: 'Code de vÃ©rification invalide',
+        errorMessage: 'Code de vérification invalide',
       );
       rethrow;
     }
   }
 
-  /// Envoyer le code de vÃ©rification par tÃ©lÃ©phone
+  /// Envoyer le code de vérification par téléphone
   Future<void> verifyPhoneNumber({
     required String phoneNumber,
     required Function(String verificationId, int? resendToken) onCodeSent,
@@ -152,7 +152,7 @@ class AuthNotifier extends StateNotifier<AuthState> {
     }
   }
 
-  /// RÃ©initialiser le mot de passe
+  /// Réinitialiser le mot de passe
   Future<void> resetPassword(String email) async {
     try {
       await _auth.sendPasswordResetEmail(email: email);
@@ -161,33 +161,33 @@ class AuthNotifier extends StateNotifier<AuthState> {
     }
   }
 
-  /// DÃ©connexion
+  /// Déconnexion
   Future<void> signOut() async {
     await _auth.signOut();
     state = const AuthState(status: AuthStatus.unauthenticated);
   }
 
-  /// Messages d'erreur Firebase en franÃ§ais
+  /// Messages d'erreur Firebase en français
   String _getFirebaseErrorMessage(String code) {
     switch (code) {
       case 'user-not-found':
-        return 'Aucun utilisateur trouvÃ© avec cet email';
+        return 'Aucun utilisateur trouvé avec cet email';
       case 'wrong-password':
         return 'Mot de passe incorrect';
       case 'email-already-in-use':
-        return 'Cet email est dÃ©jÃ  utilisÃ©';
+        return 'Cet email est déjà utilisé';
       case 'weak-password':
         return 'Le mot de passe est trop faible';
       case 'invalid-email':
         return 'Email invalide';
       case 'too-many-requests':
-        return 'Trop de tentatives. RÃ©essayez plus tard.';
+        return 'Trop de tentatives. Réessayez plus tard.';
       case 'invalid-phone-number':
-        return 'NumÃ©ro de tÃ©lÃ©phone invalide';
+        return 'Numéro de téléphone invalide';
       case 'invalid-verification-code':
-        return 'Code de vÃ©rification invalide';
+        return 'Code de vérification invalide';
       default:
-        return 'Une erreur est survenue. Veuillez rÃ©essayer.';
+        return 'Une erreur est survenue. Veuillez réessayer.';
     }
   }
 }

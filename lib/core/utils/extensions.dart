@@ -1,29 +1,29 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
-/// Extensions utilitaires pour faciliter le dÃ©veloppement
+/// Extensions utilitaires pour faciliter le développement
 extension BuildContextExtension on BuildContext {
-  /// AccÃ¨s rapide au thÃ¨me
+  /// Accès rapide au thème
   ThemeData get theme => Theme.of(this);
 
-  /// AccÃ¨s rapide au color scheme
+  /// Accès rapide au color scheme
   ColorScheme get colorScheme => Theme.of(this).colorScheme;
 
-  /// AccÃ¨s rapide au text theme
+  /// Accès rapide au text theme
   TextTheme get textTheme => Theme.of(this).textTheme;
 
-  /// AccÃ¨s rapide aux dimensions de l'Ã©cran
+  /// Accès rapide aux dimensions de l'écran
   Size get screenSize => MediaQuery.sizeOf(this);
 
-  /// Largeur de l'Ã©cran
+  /// Largeur de l'écran
   double get screenWidth => MediaQuery.sizeOf(this).width;
 
-  /// Hauteur de l'Ã©cran
+  /// Hauteur de l'écran
   double get screenHeight => MediaQuery.sizeOf(this).height;
 
-  /// Padding pour la zone de sÃ©curitÃ© (notch, barre de navigation)
+  /// Padding pour la zone de sécurité (notch, barre de navigation)
   EdgeInsets get safePadding => MediaQuery.paddingOf(this);
 
-  /// VÃ©rifie si le thÃ¨me est en mode sombre
+  /// Vérifie si le thème est en mode sombre
   bool get isDarkMode => Theme.of(this).brightness == Brightness.dark;
 
   /// Affiche un SnackBar
@@ -40,7 +40,7 @@ extension BuildContextExtension on BuildContext {
     );
   }
 
-  /// Affiche un SnackBar de succÃ¨s
+  /// Affiche un SnackBar de succès
   void showSuccessSnackBar(String message) {
     ScaffoldMessenger.of(this).hideCurrentSnackBar();
     ScaffoldMessenger.of(this).showSnackBar(
@@ -59,7 +59,7 @@ extension BuildContextExtension on BuildContext {
 }
 
 extension StringExtension on String {
-  /// PremiÃ¨re lettre en majuscule
+  /// Première lettre en majuscule
   String get capitalize {
     if (isEmpty) return this;
     return '${this[0].toUpperCase()}${substring(1)}';
@@ -70,7 +70,7 @@ extension StringExtension on String {
     return split(' ').map((word) => word.capitalize).join(' ');
   }
 
-  /// Tronque le texte Ã  une longueur donnÃ©e
+  /// Tronque le texte à une longueur donnée
   String truncate(int maxLength, {String suffix = '...'}) {
     if (length <= maxLength) return this;
     return '${substring(0, maxLength - suffix.length)}$suffix';
@@ -101,15 +101,15 @@ extension DateTimeExtension on DateTime {
   /// Format date longue (7 juillet 2026)
   String get longDate {
     const months = [
-      'janvier', 'fÃ©vrier', 'mars', 'avril', 'mai', 'juin',
-      'juillet', 'aoÃ»t', 'septembre', 'octobre', 'novembre', 'dÃ©cembre'
+      'janvier', 'février', 'mars', 'avril', 'mai', 'juin',
+      'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'
     ];
     return '$day ${months[month - 1]} $year';
   }
 }
 
 extension ListExtension<T> on List<T> {
-  /// SÃ©pare les Ã©lÃ©ments avec un sÃ©parateur
+  /// Sépare les éléments avec un séparateur
   List<T> separated(T separator) {
     if (length <= 1) return this;
     final result = <T>[];

@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_routes.dart';
@@ -7,19 +7,19 @@ class DocumentGeneratorScreen extends StatelessWidget {
   const DocumentGeneratorScreen({super.key});
 
   static final _templates = [
-    _Tmpl('Plainte', Icons.report_outlined, 'DÃ©poser une plainte officielle'),
+    _Tmpl('Plainte', Icons.report_outlined, 'Déposer une plainte officielle'),
     _Tmpl('Mise en demeure', Icons.warning_amber_rounded, 'Mettre en demeure une partie'),
-    _Tmpl('Contrat simple', Icons.handshake_outlined, 'RÃ©diger un contrat de base'),
-    _Tmpl('Procuration', Icons.how_to_vote_outlined, 'DÃ©lÃ©guer un pouvoir'),
+    _Tmpl('Contrat simple', Icons.handshake_outlined, 'Rédiger un contrat de base'),
+    _Tmpl('Procuration', Icons.how_to_vote_outlined, 'Déléguer un pouvoir'),
     _Tmpl('Lettre administrative', Icons.mail_outlined, 'Correspondance officielle'),
-    _Tmpl('DÃ©claration', Icons.edit_document, 'Faire une dÃ©claration Ã©crite'),
+    _Tmpl('Déclaration', Icons.edit_document, 'Faire une déclaration écrite'),
     _Tmpl('Demande officielle', Icons.request_page_outlined, 'Formuler une demande'),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('GÃ©nÃ©rateur de documents')),
+      appBar: AppBar(title: const Text('Générateur de documents')),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
@@ -37,7 +37,7 @@ class DocumentGeneratorScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('CrÃ©ez vos documents', style: TextStyle(
+                      Text('Créez vos documents', style: TextStyle(
                           fontSize: 16, fontWeight: FontWeight.w700, color: AppColors.white)),
                       Text('Remplissez un formulaire, obtenez un PDF', style: TextStyle(
                           fontSize: 12, color: Colors.white70)),

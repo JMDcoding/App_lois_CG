@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-/// Notifier pour gÃ©rer le mode sombre et le sauvegarder dans Hive
+/// Notifier pour gérer le mode sombre et le sauvegarder dans Hive
 class ThemeModeNotifier extends Notifier<ThemeMode> {
   static const _themeKey = 'app_theme_mode';
   late final Box _settingsBox;
@@ -29,7 +29,7 @@ class ThemeModeNotifier extends Notifier<ThemeMode> {
   }
 }
 
-/// Provider pour le mode thÃ¨me
+/// Provider pour le mode thème
 final themeModeProvider = NotifierProvider<ThemeModeNotifier, ThemeMode>(() {
   return ThemeModeNotifier();
 });

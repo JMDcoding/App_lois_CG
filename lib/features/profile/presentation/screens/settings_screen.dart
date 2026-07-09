@@ -13,7 +13,7 @@ class SettingsScreen extends ConsumerWidget {
     final themeMode = ref.watch(themeModeProvider);
     final locale = ref.watch(localeProvider);
     
-    String themeString = 'SystÃ¨me';
+    String themeString = 'Système';
     if (themeMode == ThemeMode.light) themeString = 'Clair';
     if (themeMode == ThemeMode.dark) themeString = 'Sombre';
     

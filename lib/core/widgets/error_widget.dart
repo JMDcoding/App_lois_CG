@@ -1,7 +1,7 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
 
-/// Widget d'erreur avec possibilitÃ© de rÃ©essayer
+/// Widget d'erreur avec possibilité de réessayer
 class MobekoErrorWidget extends StatelessWidget {
   final String message;
   final String? details;
@@ -62,7 +62,7 @@ class MobekoErrorWidget extends StatelessWidget {
               ElevatedButton.icon(
                 onPressed: onRetry,
                 icon: const Icon(Icons.refresh_rounded, size: 18),
-                label: const Text('RÃ©essayer'),
+                label: const Text('Réessayer'),
               ),
             ],
           ],

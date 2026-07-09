@@ -1,7 +1,7 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
 
-/// Barre de recherche stylisÃ©e Mobeko
+/// Barre de recherche stylisée Mobeko
 /// Avec support pour la recherche vocale
 class MobekoSearchBar extends StatelessWidget {
   final String hintText;

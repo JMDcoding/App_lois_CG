@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/constants/app_colors.dart';
@@ -39,7 +39,7 @@ class ProfileScreen extends ConsumerWidget {
                       Text(user?.displayName ?? 'Utilisateur Mobeko',
                           style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700,
                               color: AppColors.white)),
-                      Text(user?.email ?? 'Mode invitÃ©',
+                      Text(user?.email ?? 'Mode invité',
                           style: TextStyle(fontSize: 13,
                               color: AppColors.white.withValues(alpha: 0.8))),
                     ],
@@ -57,17 +57,17 @@ class ProfileScreen extends ConsumerWidget {
                       onTap: () {}),
                   _ProfileTile(icon: Icons.bookmark_rounded, title: 'Favoris',
                       onTap: () => context.push(AppRoutes.favorites)),
-                  _ProfileTile(icon: Icons.download_rounded, title: 'TÃ©lÃ©chargements',
+                  _ProfileTile(icon: Icons.download_rounded, title: 'Téléchargements',
                       onTap: () {}),
                   _ProfileTile(icon: Icons.description_rounded, title: 'Mes documents',
                       onTap: () {}),
                   const Divider(height: 32),
-                  _ProfileTile(icon: Icons.settings_rounded, title: 'ParamÃ¨tres',
+                  _ProfileTile(icon: Icons.settings_rounded, title: 'Paramètres',
                       onTap: () => context.push(AppRoutes.settings)),
                   _ProfileTile(icon: Icons.language_rounded, title: 'Langue',
-                      trailing: 'FranÃ§ais', onTap: () {}),
-                  _ProfileTile(icon: Icons.dark_mode_rounded, title: 'ThÃ¨me',
-                      trailing: 'SystÃ¨me', onTap: () {}),
+                      trailing: 'Français', onTap: () {}),
+                  _ProfileTile(icon: Icons.dark_mode_rounded, title: 'Thème',
+                      trailing: 'Système', onTap: () {}),
                   _ProfileTile(icon: Icons.info_outline_rounded, title: 'Ã€ propos',
                       onTap: () {}),
                   const SizedBox(height: 16),
@@ -80,7 +80,7 @@ class ProfileScreen extends ConsumerWidget {
                           if (context.mounted) context.go(AppRoutes.login);
                         },
                         icon: const Icon(Icons.logout_rounded, color: AppColors.emergency),
-                        label: const Text('DÃ©connexion',
+                        label: const Text('Déconnexion',
                             style: TextStyle(color: AppColors.emergency)),
                         style: OutlinedButton.styleFrom(
                           side: const BorderSide(color: AppColors.emergency),

@@ -1,7 +1,7 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
 
-/// Bouton animÃ© avec gradient et effet de pression
+/// Bouton animé avec gradient et effet de pression
 class AnimatedButton extends StatefulWidget {
   final String text;
   final VoidCallback? onPressed;

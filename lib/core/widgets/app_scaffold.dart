@@ -5,7 +5,7 @@ import '../constants/app_routes.dart';
 import 'responsive_layout.dart';
 
 /// Scaffold principal avec Bottom Navigation Bar (Mobile) ou Navigation Rail (Web)
-/// Contient les 5 onglets : Accueil, BibliothÃ¨que, Assistant, Carte, Profil
+/// Contient les 5 onglets : Accueil, Bibliothèque, Assistant, Carte, Profil
 class AppScaffold extends StatelessWidget {
   final Widget child;
 
@@ -51,7 +51,7 @@ class _SideNavRail extends StatelessWidget {
         NavigationRailDestination(
           icon: Icon(Icons.menu_book_outlined, color: isDark ? AppColors.grey500 : AppColors.grey600),
           selectedIcon: const Icon(Icons.menu_book_rounded),
-          label: const Text('BibliothÃ¨que'),
+          label: const Text('Bibliothèque'),
         ),
         NavigationRailDestination(
           icon: Icon(Icons.smart_toy_outlined, color: isDark ? AppColors.grey500 : AppColors.grey600),
@@ -94,7 +94,7 @@ class _BottomNavBar extends StatelessWidget {
               color: isDark ? AppColors.grey500 : AppColors.grey600),
           selectedIcon: Icon(Icons.menu_book_rounded,
               color: isDark ? AppColors.lightGreen : AppColors.forestGreen),
-          label: 'BibliothÃ¨que',
+          label: 'Bibliothèque',
         ),
         NavigationDestination(
           icon: Icon(Icons.smart_toy_outlined,
@@ -178,7 +178,7 @@ class _EmergencyFab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Ne pas afficher le FAB sur l'Ã©cran d'urgence
+    // Ne pas afficher le FAB sur l'écran d'urgence
     final location = GoRouterState.of(context).matchedLocation;
     if (location.startsWith(AppRoutes.emergency)) return const SizedBox.shrink();
 

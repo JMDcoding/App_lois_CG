@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import '../../../../core/constants/app_colors.dart';
 
 class EmergencyDetailScreen extends StatelessWidget {
@@ -15,26 +15,26 @@ class EmergencyDetailScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _Section(title: 'âš–ï¸ Vos droits', items: [
-              'Vous avez le droit de connaÃ®tre les raisons',
+              'Vous avez le droit de connaître les raisons',
               'Vous pouvez contacter un avocat',
-              'Vous pouvez prÃ©venir votre famille',
+              'Vous pouvez prévenir votre famille',
               'Toute violence est interdite',
             ]),
-            _Section(title: 'ðŸš¨ Actions immÃ©diates', items: [
-              'Restez calme et coopÃ©rez',
+            _Section(title: 'ðŸš¨ Actions immédiates', items: [
+              'Restez calme et coopérez',
               'Notez les noms et matricules',
               'Contactez un proche',
               'Ne signez rien sans comprendre',
             ]),
-            _Section(title: 'ðŸ“ž NumÃ©ros utiles', items: [
+            _Section(title: 'ðŸ“ž Numéros utiles', items: [
               'Police: 117',
               'Urgences: 112',
               'Barreau de Brazzaville',
               'Commission des droits de l\'homme',
             ]),
-            _Section(title: 'ðŸ“‹ ProcÃ©dure', items: [
+            _Section(title: 'ðŸ“‹ Procédure', items: [
               'Ã‰tape 1: Restez calme',
-              'Ã‰tape 2: Demandez Ã  voir l\'officier',
+              'Ã‰tape 2: Demandez à voir l\'officier',
               'Ã‰tape 3: Exigez un PV',
               'Ã‰tape 4: Contactez un avocat sous 24h',
             ]),
@@ -46,7 +46,7 @@ class EmergencyDetailScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
               ),
               child: const Text(
-                'âš ï¸ En cas de danger immÃ©diat, appelez le 117 (Police) ou le 112 (Urgences).',
+                'âš ï¸ En cas de danger immédiat, appelez le 117 (Police) ou le 112 (Urgences).',
                 style: TextStyle(fontWeight: FontWeight.w600, height: 1.5),
               ),
             ),

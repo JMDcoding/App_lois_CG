@@ -1,7 +1,7 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
 
-/// Carte de catÃ©gorie avec icÃ´ne et animation au tap
+/// Carte de catégorie avec icône et animation au tap
 class CategoryCard extends StatelessWidget {
   final String title;
   final IconData icon;

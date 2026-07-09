@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../core/constants/app_colors.dart';
 
@@ -22,11 +22,11 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
     // Message de bienvenue
     _messages.add(_ChatMessage(
       text: 'Bonjour ! ðŸ‘‹ Je suis votre assistant juridique Mobeko.\n\n'
-          'Je peux vous aider Ã  :\n'
+          'Je peux vous aider à :\n'
           'â€¢ Comprendre vos droits\n'
           'â€¢ Expliquer les lois congolaises\n'
-          'â€¢ Guider vos dÃ©marches\n'
-          'â€¢ GÃ©nÃ©rer des checklists\n\n'
+          'â€¢ Guider vos démarches\n'
+          'â€¢ Générer des checklists\n\n'
           'Comment puis-je vous aider aujourd\'hui ?',
       isUser: false,
       timestamp: DateTime.now(),
@@ -71,7 +71,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
                   ),
                 ),
                 Text(
-                  _isTyping ? 'En train d\'Ã©crire...' : 'En ligne',
+                  _isTyping ? 'En train d\'écrire...' : 'En ligne',
                   style: TextStyle(
                     fontFamily: 'Inter',
                     fontSize: 11,
@@ -117,7 +117,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
                 ? AppColors.darkCard.withValues(alpha: 0.5)
                 : AppColors.paleGreen.withValues(alpha: 0.3),
             child: Text(
-              'âš–ï¸ Informations Ã  titre indicatif. Consultez un avocat pour un conseil personnalisÃ©.',
+              'âš–ï¸ Informations à titre indicatif. Consultez un avocat pour un conseil personnalisé.',
               style: TextStyle(
                 fontFamily: 'Inter',
                 fontSize: 10,
@@ -155,7 +155,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
 
     _scrollToBottom();
 
-    // Simuler une rÃ©ponse IA (sera remplacÃ© par l'appel Gemini API)
+    // Simuler une réponse IA (sera remplacé par l'appel Gemini API)
     Future.delayed(const Duration(seconds: 2), () {
       if (mounted) {
         setState(() {
@@ -172,27 +172,27 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
   }
 
   String _generateMockResponse(String query) {
-    // RÃ©ponse mock - sera remplacÃ©e par Gemini API
-    return 'ðŸ“‹ **RÃ©ponse Ã  votre question :**\n\n'
+    // Réponse mock - sera remplacée par Gemini API
+    return 'ðŸ“‹ **Réponse à votre question :**\n\n'
         'Votre question concerne un sujet important du droit congolais. '
-        'Voici les points essentiels Ã  retenir :\n\n'
-        '1. **Cadre juridique** : Selon la Constitution de la RÃ©publique du Congo '
-        'et le Code civil, vos droits sont protÃ©gÃ©s.\n\n'
-        '2. **DÃ©marches recommandÃ©es** :\n'
-        '   â€¢ Rassemblez les documents nÃ©cessaires\n'
-        '   â€¢ Contactez l\'organisme compÃ©tent\n'
-        '   â€¢ Respectez les dÃ©lais lÃ©gaux\n\n'
-        '3. **Organismes compÃ©tents** :\n'
+        'Voici les points essentiels à retenir :\n\n'
+        '1. **Cadre juridique** : Selon la Constitution de la République du Congo '
+        'et le Code civil, vos droits sont protégés.\n\n'
+        '2. **Démarches recommandées** :\n'
+        '   â€¢ Rassemblez les documents nécessaires\n'
+        '   â€¢ Contactez l\'organisme compétent\n'
+        '   â€¢ Respectez les délais légaux\n\n'
+        '3. **Organismes compétents** :\n'
         '   â€¢ Tribunal de Grande Instance\n'
-        '   â€¢ PrÃ©fecture de votre localitÃ©\n\n'
-        'âš ï¸ *Cette rÃ©ponse est fournie Ã  titre informatif et ne remplace pas '
-        'un conseil juridique personnalisÃ©.*';
+        '   â€¢ Préfecture de votre localité\n\n'
+        'âš ï¸ *Cette réponse est fournie à titre informatif et ne remplace pas '
+        'un conseil juridique personnalisé.*';
   }
 
   void _startVoiceInput() {
-    // TODO: ImplÃ©menter la reconnaissance vocale
+    // TODO: Implémenter la reconnaissance vocale
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Reconnaissance vocale bientÃ´t disponible')),
+      const SnackBar(content: Text('Reconnaissance vocale bientôt disponible')),
     );
   }
 

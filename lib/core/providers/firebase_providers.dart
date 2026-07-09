@@ -1,4 +1,4 @@
-﻿import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -35,12 +35,12 @@ final firebaseMessagingProvider = Provider<FirebaseMessaging>((ref) {
 /// Auth State Provider
 /// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
-/// Stream de l'Ã©tat d'authentification
+/// Stream de l'état d'authentification
 final authStateProvider = StreamProvider<User?>((ref) {
   return ref.watch(firebaseAuthProvider).authStateChanges();
 });
 
-/// L'utilisateur actuellement connectÃ©
+/// L'utilisateur actuellement connecté
 final currentUserProvider = Provider<User?>((ref) {
   return ref.watch(authStateProvider).value;
 });
@@ -54,7 +54,7 @@ final localStorageServiceProvider = Provider<LocalStorageService>((ref) {
   return LocalStorageService();
 });
 
-/// Provider pour le service de connectivitÃ©
+/// Provider pour le service de connectivité
 final connectivityServiceProvider = Provider<ConnectivityService>((ref) {
   return ConnectivityService();
 });

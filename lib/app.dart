@@ -25,7 +25,7 @@ class MobekoApp extends ConsumerWidget {
       // Routing
       routerConfig: router,
 
-      // ThÃ¨me
+      // Thème
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: themeMode,
@@ -33,7 +33,7 @@ class MobekoApp extends ConsumerWidget {
       // Localisation
       locale: locale,
       supportedLocales: const [
-        Locale('fr'),      // FranÃ§ais
+        Locale('fr'),      // Français
         Locale('en'),      // Anglais
         Locale('ln'),      // Lingala
         Locale('kg'),      // Kituba

@@ -1,4 +1,4 @@
-﻿/// Constantes de routes pour la navigation GoRouter
+/// Constantes de routes pour la navigation GoRouter
 class AppRoutes {
   AppRoutes._();
 
@@ -23,7 +23,7 @@ class AppRoutes {
   static const String profile = '/profile';
 
   // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-  // Routes imbriquÃ©es
+  // Routes imbriquées
   // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
   // Library

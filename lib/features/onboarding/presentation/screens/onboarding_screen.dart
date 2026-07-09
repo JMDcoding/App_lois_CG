@@ -1,10 +1,10 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_routes.dart';
 import '../../../../core/widgets/animated_button.dart';
 
-/// Ã‰cran d'onboarding avec 3 pages animÃ©es
+/// Ã‰cran d'onboarding avec 3 pages animées
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
 
@@ -21,21 +21,21 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       icon: Icons.gavel_rounded,
       title: 'Connaissez vos droits',
       subtitle:
-          'AccÃ©dez aux lois congolaises expliquÃ©es simplement,\ndans votre langue.',
+          'Accédez aux lois congolaises expliquées simplement,\ndans votre langue.',
       gradient: AppColors.primaryGradient,
     ),
     _OnboardingData(
       icon: Icons.smart_toy_rounded,
       title: 'Assistant juridique IA',
       subtitle:
-          'Posez vos questions juridiques et obtenez\ndes rÃ©ponses claires et documentÃ©es.',
+          'Posez vos questions juridiques et obtenez\ndes réponses claires et documentées.',
       gradient: AppColors.accentGradient,
     ),
     _OnboardingData(
       icon: Icons.checklist_rounded,
-      title: 'Guidez vos dÃ©marches',
+      title: 'Guidez vos démarches',
       subtitle:
-          'Suivez pas Ã  pas vos dÃ©marches administratives\navec tous les documents nÃ©cessaires.',
+          'Suivez pas à pas vos démarches administratives\navec tous les documents nécessaires.',
       gradient: AppColors.darkGradient,
     ),
   ];

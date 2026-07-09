@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/constants/app_colors.dart';
@@ -52,7 +52,7 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
         children: [
           const SizedBox(height: 16),
           Text(
-            'Mot de passe oubliÃ©',
+            'Mot de passe oublié',
             style: TextStyle(
               fontFamily: 'Inter',
               fontSize: 28,
@@ -62,7 +62,7 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
           ),
           const SizedBox(height: 8),
           Text(
-            'Entrez votre email pour recevoir un lien de rÃ©initialisation.',
+            'Entrez votre email pour recevoir un lien de réinitialisation.',
             style: TextStyle(fontSize: 14, color: AppColors.grey500),
           ),
           const SizedBox(height: 32),
@@ -102,18 +102,18 @@ class _ForgotPasswordScreenState extends ConsumerState<ForgotPasswordScreen> {
         ),
         const SizedBox(height: 24),
         const Text(
-          'Email envoyÃ© !',
+          'Email envoyé !',
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
         ),
         const SizedBox(height: 12),
         Text(
-          'VÃ©rifiez votre boÃ®te de rÃ©ception et suivez les instructions.',
+          'Vérifiez votre boîte de réception et suivez les instructions.',
           style: TextStyle(fontSize: 14, color: AppColors.grey500),
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: 32),
         AnimatedButton(
-          text: 'Retour Ã  la connexion',
+          text: 'Retour à la connexion',
           onPressed: () => context.pop(),
         ),
       ],

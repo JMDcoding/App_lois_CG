@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_routes.dart';
@@ -8,17 +8,17 @@ class EmergencyScreen extends StatelessWidget {
 
   static final _scenarios = [
     _Scenario('Arrestation', Icons.front_hand_rounded, AppColors.emergency,
-        'Vous Ãªtes arrÃªtÃ© ou un proche est arrÃªtÃ©'),
+        'Vous êtes arrêté ou un proche est arrêté'),
     _Scenario('Violence', Icons.warning_rounded, const Color(0xFFE76F51),
-        'Vous Ãªtes victime de violence physique ou morale'),
+        'Vous êtes victime de violence physique ou morale'),
     _Scenario('Expulsion', Icons.home_rounded, const Color(0xFFE9C46A),
-        'Vous Ãªtes menacÃ© d\'expulsion de votre logement'),
+        'Vous êtes menacé d\'expulsion de votre logement'),
     _Scenario('Accident', Icons.car_crash_rounded, const Color(0xFF457B9D),
         'Vous avez eu un accident de la route'),
     _Scenario('Arnaque', Icons.report_gmailerrorred_rounded, const Color(0xFFF4A261),
-        'Vous Ãªtes victime d\'une arnaque ou escroquerie'),
+        'Vous êtes victime d\'une arnaque ou escroquerie'),
     _Scenario('Litige foncier', Icons.terrain_rounded, const Color(0xFF2A9D8F),
-        'Conflit sur la propriÃ©tÃ© d\'un terrain'),
+        'Conflit sur la propriété d\'un terrain'),
   ];
 
   @override
@@ -49,11 +49,11 @@ class EmergencyScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Besoin d\'aide immÃ©diate ?',
+                      Text('Besoin d\'aide immédiate ?',
                           style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700,
                               color: AppColors.white)),
                       SizedBox(height: 4),
-                      Text('SÃ©lectionnez votre situation ci-dessous',
+                      Text('Sélectionnez votre situation ci-dessous',
                           style: TextStyle(fontSize: 13, color: Colors.white70)),
                     ],
                   ),

@@ -33,13 +33,13 @@ Future<void> main() async {
       options: DefaultFirebaseOptions.currentPlatform,
     );
   } catch (e) {
-    debugPrint('Firebase dÃ©jÃ  initialisÃ© ou erreur : $e');
+    debugPrint('Firebase déjà initialisé ou erreur : $e');
   }
 
   // Initialiser Hive pour le stockage local
   await Hive.initFlutter();
 
-  // Ouvrir les boxes Hive nÃ©cessaires
+  // Ouvrir les boxes Hive nécessaires
   await Future.wait([
     Hive.openBox('settings'),
     Hive.openBox('cache'),

@@ -37,12 +37,12 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
       })
       ..repeat();
 
-    // Simuler le chargement des donnÃ©es (ex: requÃªtes rÃ©seau, Hive)
+    // Simuler le chargement des données (ex: requêtes réseau, Hive)
     _loadData();
   }
 
   Future<void> _loadData() async {
-    // Remplacer par vos rÃ©els chargements initiaux si nÃ©cessaire
+    // Remplacer par vos réels chargements initiaux si nécessaire
     await Future.delayed(const Duration(seconds: 4));
     
     if (mounted) {
@@ -74,7 +74,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
               child: Image.asset(
                 'assets/images/logo/logo.jpeg',
                 errorBuilder: (context, error, stackTrace) {
-                  // Fallback temporaire si le logo.png n'est pas encore ajoutÃ©
+                  // Fallback temporaire si le logo.png n'est pas encore ajouté
                   return Container(
                     decoration: BoxDecoration(
                       color: AppColors.forestGreen.withValues(alpha: 0.1),

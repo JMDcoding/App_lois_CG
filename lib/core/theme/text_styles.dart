@@ -1,8 +1,8 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
 
 /// Styles typographiques Mobeko
-/// Utilise la police Inter pour une lisibilitÃ© optimale
+/// Utilise la police Inter pour une lisibilité optimale
 class AppTextStyles {
   AppTextStyles._();
 

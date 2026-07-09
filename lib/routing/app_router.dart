@@ -7,8 +7,11 @@ import '../features/onboarding/presentation/screens/onboarding_screen.dart';
 import '../features/auth/presentation/screens/login_screen.dart';
 import '../features/auth/presentation/screens/register_screen.dart';
 import '../features/auth/presentation/screens/phone_auth_screen.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import '../features/auth/presentation/screens/forgot_password_screen.dart';
 import '../features/home/presentation/screens/home_screen.dart';
+import '../web/web_home_screen.dart';
+import '../web/web_scaffold.dart';
 import '../features/library/presentation/screens/library_screen.dart';
 import '../features/library/presentation/screens/category_screen.dart';
 import '../features/library/presentation/screens/article_detail_screen.dart';
@@ -46,7 +49,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       // Pas de redirection si onboarding ou splash
       if (isOnboarding || isSplash) return null;
 
-      // Pas besoin d'ÃƒÂªtre connectÃƒÂ© pour utiliser l'app (connexion anonyme)
+      // Pas besoin d'àªtre connecté pour utiliser l'app (connexion anonyme)
       // La redirection est optionnelle
       return null;
     },
@@ -81,16 +84,16 @@ final routerProvider = Provider<GoRouter>((ref) {
         builder: (context, state) => const ForgotPasswordScreen(),
       ),
 
-      // Main shell with bottom navigation
+      // Main shell with bottom navigation (Mobile) or Web Scaffold (Web)
       ShellRoute(
         navigatorKey: _shellNavigatorKey,
-        builder: (context, state, child) => AppScaffold(child: child),
+        builder: (context, state, child) => kIsWeb ? WebScaffold(child: child) : AppScaffold(child: child),
         routes: [
           // Home tab
           GoRoute(
             path: AppRoutes.home,
-            pageBuilder: (context, state) => const NoTransitionPage(
-              child: HomeScreen(),
+            pageBuilder: (context, state) => NoTransitionPage(
+              child: kIsWeb ? const WebHomeScreen() : const HomeScreen(),
             ),
           ),
 

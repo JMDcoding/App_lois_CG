@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import '../../../../core/constants/app_colors.dart';
 
 class CategoryScreen extends StatelessWidget {
@@ -24,7 +24,7 @@ class CategoryScreen extends StatelessWidget {
               subtitle: Padding(
                 padding: const EdgeInsets.only(top: 8),
                 child: Text(
-                  'RÃ©sumÃ© de l\'article concernant le droit de la catÃ©gorie $categoryId.',
+                  'Résumé de l\'article concernant le droit de la catégorie $categoryId.',
                   style: TextStyle(fontSize: 13, color: AppColors.grey600, height: 1.4),
                 ),
               ),

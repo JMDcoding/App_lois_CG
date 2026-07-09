@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_routes.dart';
@@ -7,21 +7,21 @@ class ProceduresListScreen extends StatelessWidget {
   const ProceduresListScreen({super.key});
 
   static final _procedures = [
-    _Proc('Carte nationale d\'identitÃƒÂ©', Icons.badge_outlined, '15 000 FCFA', '30 jours'),
+    _Proc('Carte nationale d\'identité', Icons.badge_outlined, '15 000 FCFA', '30 jours'),
     _Proc('Passeport', Icons.flight_outlined, '50 000 FCFA', '45 jours'),
     _Proc('Permis de conduire', Icons.drive_eta_outlined, '25 000 FCFA', '21 jours'),
     _Proc('Acte de naissance', Icons.child_friendly_outlined, '5 000 FCFA', '7 jours'),
     _Proc('Acte de mariage', Icons.favorite_outlined, '10 000 FCFA', '14 jours'),
-    _Proc('Acte de dÃƒÂ©cÃƒÂ¨s', Icons.description_outlined, '5 000 FCFA', '7 jours'),
+    _Proc('Acte de décès', Icons.description_outlined, '5 000 FCFA', '7 jours'),
     _Proc('Succession', Icons.account_tree_outlined, 'Variable', '90 jours'),
-    _Proc('CrÃƒÂ©ation d\'entreprise', Icons.business_outlined, '100 000 FCFA', '15 jours'),
+    _Proc('Création d\'entreprise', Icons.business_outlined, '100 000 FCFA', '15 jours'),
     _Proc('Casier judiciaire', Icons.gavel_outlined, '10 000 FCFA', '7 jours'),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('DÃƒÂ©marches Administratives')),
+      appBar: AppBar(title: const Text('Démarches Administratives')),
       body: ListView.builder(
         padding: const EdgeInsets.all(16),
         itemCount: _procedures.length,

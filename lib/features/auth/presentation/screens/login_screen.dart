@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/constants/app_colors.dart';
@@ -78,7 +78,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      'La loi Ã  portÃ©e de main',
+                      'La loi à portée de main',
                       style: TextStyle(
                         fontFamily: 'Inter',
                         fontSize: 14,
@@ -108,7 +108,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      'AccÃ©dez Ã  votre espace juridique',
+                      'Accédez à votre espace juridique',
                       style: TextStyle(
                         fontFamily: 'Inter',
                         fontSize: 14,
@@ -154,7 +154,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                       alignment: Alignment.centerRight,
                       child: TextButton(
                         onPressed: () => context.push(AppRoutes.forgotPassword),
-                        child: const Text('Mot de passe oubliÃ© ?'),
+                        child: const Text('Mot de passe oublié ?'),
                       ),
                     ),
 
@@ -201,7 +201,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
 
                     // Phone
                     _SocialButton(
-                      text: 'Continuer avec le tÃ©lÃ©phone',
+                      text: 'Continuer avec le téléphone',
                       icon: Icons.phone_android_rounded,
                       onPressed: () => context.push(AppRoutes.phoneAuth),
                       isDark: isDark,
@@ -210,7 +210,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
 
                     // Anonymous
                     _SocialButton(
-                      text: 'Continuer en tant qu\'invitÃ©',
+                      text: 'Continuer en tant qu\'invité',
                       icon: Icons.person_outline_rounded,
                       onPressed: _handleAnonymousLogin,
                       isDark: isDark,

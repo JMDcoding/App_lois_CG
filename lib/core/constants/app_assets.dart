@@ -1,4 +1,4 @@
-﻿/// Chemins vers les assets de l'application
+/// Chemins vers les assets de l'application
 class AppAssets {
   AppAssets._();
 
@@ -35,7 +35,7 @@ class AppAssets {
   static const String iconContracts = '$_iconsPath/contracts.svg';
 
   // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-  // DonnÃ©es hors ligne
+  // Données hors ligne
   // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
   static const String _dataPath = 'assets/data/offline';

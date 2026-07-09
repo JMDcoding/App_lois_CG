@@ -41,7 +41,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       builder: (context) => AlertDialog(
         title: const Text('Nouvelles Lois en Vigueur ðŸ‡¨ðŸ‡¬'),
         content: const Text(
-          'De nouvelles lois ont Ã©tÃ© promulguÃ©es. Vous pouvez les consulter directement sur le site officiel.',
+          'De nouvelles lois ont été promulguées. Vous pouvez les consulter directement sur le site officiel.',
         ),
         actions: [
           TextButton(
@@ -112,7 +112,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                             ),
                             const SizedBox(height: 4),
                             Text(
-                              'La loi Ã  portÃ©e de main',
+                              'La loi à portée de main',
                               style: TextStyle(
                                 fontFamily: 'Inter',
                                 fontSize: 14,
@@ -148,7 +148,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               ),
             ),
 
-            // AccÃ¨s rapide urgence
+            // Accès rapide urgence
             SliverToBoxAdapter(
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(20, 24, 20, 0),
@@ -158,12 +158,12 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               ),
             ),
 
-            // CatÃ©gories
+            // Catégories
             SliverToBoxAdapter(
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(20, 28, 20, 0),
                 child: _SectionHeader(
-                  title: 'CatÃ©gories',
+                  title: 'Catégories',
                   onSeeAll: () => context.go(AppRoutes.library),
                 ),
               ),
@@ -181,9 +181,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                     _buildCategoryChip(context, 'Logement', Icons.home_work_outlined),
                     _buildCategoryChip(context, 'Police', Icons.local_police_outlined),
                     _buildCategoryChip(context, 'Justice', Icons.gavel_rounded),
-                    _buildCategoryChip(context, 'SantÃ©', Icons.health_and_safety_outlined),
+                    _buildCategoryChip(context, 'Santé', Icons.health_and_safety_outlined),
                     _buildCategoryChip(context, 'Ã‰ducation', Icons.school_outlined),
-                    _buildCategoryChip(context, 'FiscalitÃ©', Icons.account_balance_outlined),
+                    _buildCategoryChip(context, 'Fiscalité', Icons.account_balance_outlined),
                     _buildCategoryChip(context, 'Entreprises', Icons.business_center_outlined),
                   ],
                 ),
@@ -204,8 +204,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   children: [
                     Expanded(
                       child: _ServiceCard(
-                        title: 'DÃ©marches',
-                        subtitle: 'Guides Ã©tape par Ã©tape',
+                        title: 'Démarches',
+                        subtitle: 'Guides étape par étape',
                         icon: Icons.checklist_rounded,
                         color: AppColors.mediumGreen,
                         onTap: () => context.push(AppRoutes.procedures),
@@ -215,7 +215,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                     Expanded(
                       child: _ServiceCard(
                         title: 'Documents',
-                        subtitle: 'CrÃ©er automatiquement',
+                        subtitle: 'Créer automatiquement',
                         icon: Icons.description_outlined,
                         color: AppColors.info,
                         onTap: () => context.push(AppRoutes.documents),
@@ -243,7 +243,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                     const SizedBox(width: 12),
                     Expanded(
                       child: _ServiceCard(
-                        title: 'ActualitÃ©s',
+                        title: 'Actualités',
                         subtitle: 'Nouvelles lois',
                         icon: Icons.newspaper_rounded,
                         color: AppColors.forestGreen,
@@ -255,11 +255,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               ),
             ),
 
-            // Questions frÃ©quentes
+            // Questions fréquentes
             SliverToBoxAdapter(
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(20, 28, 20, 12),
-                child: _SectionHeader(title: 'Questions frÃ©quentes'),
+                child: _SectionHeader(title: 'Questions fréquentes'),
               ),
             ),
             SliverToBoxAdapter(
@@ -268,21 +268,21 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 child: Column(
                   children: [
                     _FaqTile(
-                      question: 'Quels sont mes droits si la police m\'arrÃªte ?',
-                      answer: 'Vous avez le droit de connaÃ®tre les raisons de votre arrestation, '
-                          'de contacter un avocat et de prÃ©venir votre famille. '
-                          'Consultez la section Police pour plus de dÃ©tails.',
+                      question: 'Quels sont mes droits si la police m\'arrête ?',
+                      answer: 'Vous avez le droit de connaître les raisons de votre arrestation, '
+                          'de contacter un avocat et de prévenir votre famille. '
+                          'Consultez la section Police pour plus de détails.',
                     ),
                     _FaqTile(
-                      question: 'Comment crÃ©er une entreprise au Congo ?',
-                      answer: 'La crÃ©ation d\'une entreprise nÃ©cessite l\'enregistrement au RCCM, '
+                      question: 'Comment créer une entreprise au Congo ?',
+                      answer: 'La création d\'une entreprise nécessite l\'enregistrement au RCCM, '
                           'l\'obtention d\'un NIF et plusieurs documents. '
-                          'Consultez notre guide DÃ©marches pour les Ã©tapes complÃ¨tes.',
+                          'Consultez notre guide Démarches pour les étapes complètes.',
                     ),
                     _FaqTile(
                       question: 'Quels documents pour un passeport ?',
                       answer: 'Vous aurez besoin d\'une CNI, 4 photos, un extrait de naissance, '
-                          'et le formulaire de demande. Consultez la section DÃ©marches.',
+                          'et le formulaire de demande. Consultez la section Démarches.',
                     ),
                   ],
                 ),
@@ -311,8 +311,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       const SizedBox(width: 12),
                       Expanded(
                         child: Text(
-                          'Mobeko fournit des informations juridiques Ã  titre informatif. '
-                          'Pour un conseil personnalisÃ©, consultez un avocat.',
+                          'Mobeko fournit des informations juridiques à titre informatif. '
+                          'Pour un conseil personnalisé, consultez un avocat.',
                           style: TextStyle(
                             fontFamily: 'Inter',
                             fontSize: 12,
@@ -398,7 +398,7 @@ class _EmergencyBanner extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      'Besoin d\'aide immÃ©diate ? Appuyez ici.',
+                      'Besoin d\'aide immédiate ? Appuyez ici.',
                       style: TextStyle(
                         fontFamily: 'Inter',
                         fontSize: 12,

@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import '../../../../core/constants/app_colors.dart';
 
 class NewsListScreen extends StatelessWidget {
@@ -7,7 +7,7 @@ class NewsListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('ActualitÃ©s Juridiques')),
+      appBar: AppBar(title: const Text('Actualités Juridiques')),
       body: ListView.builder(
         padding: const EdgeInsets.all(16),
         itemCount: 10,
@@ -44,10 +44,10 @@ class NewsListScreen extends StatelessWidget {
                               fontSize: 10, fontWeight: FontWeight.w700, color: AppColors.forestGreen)),
                         ),
                         const SizedBox(height: 8),
-                        Text('ActualitÃ© juridique nÂ°${index + 1}',
+                        Text('Actualité juridique nÂ°${index + 1}',
                             style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
                         const SizedBox(height: 4),
-                        Text('Description de l\'actualitÃ© juridique concernant une nouvelle loi ou rÃ©forme.',
+                        Text('Description de l\'actualité juridique concernant une nouvelle loi ou réforme.',
                             style: TextStyle(fontSize: 13, color: AppColors.grey600, height: 1.4)),
                         const SizedBox(height: 8),
                         Text('Il y a ${index + 1} jours',

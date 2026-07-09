@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/constants/app_colors.dart';
@@ -45,7 +45,7 @@ class _PhoneAuthScreenState extends ConsumerState<PhoneAuthScreen> {
             children: [
               const SizedBox(height: 16),
               Text(
-                _codeSent ? 'VÃ©rification' : 'Connexion par tÃ©lÃ©phone',
+                _codeSent ? 'Vérification' : 'Connexion par téléphone',
                 style: TextStyle(
                   fontFamily: 'Inter',
                   fontSize: 28,
@@ -56,8 +56,8 @@ class _PhoneAuthScreenState extends ConsumerState<PhoneAuthScreen> {
               const SizedBox(height: 8),
               Text(
                 _codeSent
-                    ? 'Entrez le code reÃ§u par SMS'
-                    : 'Entrez votre numÃ©ro de tÃ©lÃ©phone congolais',
+                    ? 'Entrez le code reçu par SMS'
+                    : 'Entrez votre numéro de téléphone congolais',
                 style: TextStyle(fontSize: 14, color: AppColors.grey500),
               ),
               const SizedBox(height: 32),
@@ -88,7 +88,7 @@ class _PhoneAuthScreenState extends ConsumerState<PhoneAuthScreen> {
                 ),
               const SizedBox(height: 32),
               AnimatedButton(
-                text: _codeSent ? 'VÃ©rifier' : 'Envoyer le code',
+                text: _codeSent ? 'Vérifier' : 'Envoyer le code',
                 isLoading: _isLoading,
                 onPressed: _codeSent ? _verifyCode : _sendCode,
               ),

@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import '../../../../core/constants/app_colors.dart';
 
 class MapScreen extends StatelessWidget {
@@ -28,7 +28,7 @@ class MapScreen extends StatelessWidget {
                 _FilterChip(label: 'Mairies'),
                 _FilterChip(label: 'Notaires'),
                 _FilterChip(label: 'Avocats'),
-                _FilterChip(label: 'HÃ´pitaux'),
+                _FilterChip(label: 'Hôpitaux'),
               ],
             ),
           ),
@@ -47,7 +47,7 @@ class MapScreen extends StatelessWidget {
                         style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600,
                             color: isDark ? AppColors.grey400 : AppColors.grey600)),
                     const SizedBox(height: 8),
-                    Text('Configurez votre clÃ© API Google Maps\npour activer la carte.',
+                    Text('Configurez votre clé API Google Maps\npour activer la carte.',
                         textAlign: TextAlign.center,
                         style: TextStyle(fontSize: 13, color: AppColors.grey500)),
                   ],
