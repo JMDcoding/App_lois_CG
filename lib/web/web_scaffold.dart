@@ -19,14 +19,7 @@ class WebScaffold extends StatelessWidget {
         children: [
           _WebHeader(),
           Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  child,
-                  _WebFooter(),
-                ],
-              ),
-            ),
+            child: child,
           ),
         ],
       ),
@@ -73,10 +66,14 @@ class _WebHeader extends StatelessWidget {
                 const Spacer(),
                 // Navigation Links
                 _NavLink('Accueil', AppRoutes.home),
-                const SizedBox(width: 24),
+                const SizedBox(width: 16),
                 _NavLink('Bibliothèque', AppRoutes.library),
-                const SizedBox(width: 24),
+                const SizedBox(width: 16),
                 _NavLink('Assistant', AppRoutes.chat),
+                const SizedBox(width: 16),
+                _NavLink('Démarches', AppRoutes.procedures),
+                const SizedBox(width: 16),
+                _NavLink('Carte', AppRoutes.map),
                 const SizedBox(width: 24),
                 ElevatedButton(
                   onPressed: () => context.push(AppRoutes.profile),
@@ -121,7 +118,9 @@ class _NavLink extends StatelessWidget {
   }
 }
 
-class _WebFooter extends StatelessWidget {
+class WebFooter extends StatelessWidget {
+  const WebFooter({super.key});
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;

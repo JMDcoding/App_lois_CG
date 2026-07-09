@@ -2,17 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../core/constants/app_colors.dart';
 import '../core/constants/app_routes.dart';
+import 'web_scaffold.dart'; // Pour utiliser _WebFooter
 
 class WebHomeScreen extends StatelessWidget {
   const WebHomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        _HeroSection(),
-        _FeaturesSection(),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          _HeroSection(),
+          _FeaturesSection(),
+          const WebFooter(), // Ajout du footer public
+        ],
+      ),
     );
   }
 }
