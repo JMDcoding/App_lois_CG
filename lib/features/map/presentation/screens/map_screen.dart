@@ -8,17 +8,8 @@ class MapScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    return Scaffold(
-      appBar: kIsWeb ? null : AppBar(
-        title: Text('Carte Interactive',
-            style: TextStyle(fontWeight: FontWeight.w700,
-                color: isDark ? AppColors.white : AppColors.darkGreen)),
-      ),
-      body: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 1200),
-          child: Column(
-            children: [
+    final mapBody = Column(
+      children: [
           // Category filters
           SizedBox(
             height: 50,
@@ -37,7 +28,29 @@ class MapScreen extends StatelessWidget {
             ),
           ),
           // Map placeholder
-          Expanded(
+        kIsWeb ? SizedBox(
+          height: 600,
+          child: Container(
+              color: isDark ? AppColors.darkCard : AppColors.grey100,
+              child: Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.map_rounded, size: 64,
+                        color: isDark ? AppColors.grey600 : AppColors.grey400),
+                    const SizedBox(height: 16),
+                    Text('Carte Google Maps',
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600,
+                            color: isDark ? AppColors.grey400 : AppColors.grey600)),
+                    const SizedBox(height: 8),
+                    Text('Configurez votre clé API Google Maps\npour activer la carte.',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 13, color: AppColors.grey500)),
+                  ],
+                ),
+              ),
+            ),
+        ) : Expanded(
             child: Container(
               color: isDark ? AppColors.darkCard : AppColors.grey100,
               child: Center(
@@ -59,10 +72,24 @@ class MapScreen extends StatelessWidget {
               ),
             ),
           ),
-        ],
+      ],
+    );
+
+    if (kIsWeb) {
+      return Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 1200),
+          child: mapBody,
+        ),
+      );
+    }
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Carte Interactive',
+            style: TextStyle(fontWeight: FontWeight.w700,
+                color: isDark ? AppColors.white : AppColors.darkGreen)),
       ),
-      ),
-      ),
+      body: mapBody,
     );
   }
 }

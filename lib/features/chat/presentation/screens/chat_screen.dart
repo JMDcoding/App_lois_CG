@@ -44,8 +44,79 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final chatBody = Column(
+      children: [
+        // Messages
+        kIsWeb ? SizedBox(
+          height: 600,
+          child: ListView.builder(
+            controller: _scrollController,
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+            itemCount: _messages.length + (_isTyping ? 1 : 0),
+            itemBuilder: (context, index) {
+              if (index == _messages.length && _isTyping) {
+                return _TypingIndicator(isDark: isDark);
+              }
+              return _MessageBubble(
+                message: _messages[index],
+                isDark: isDark,
+              );
+            },
+          ),
+        ) : Expanded(
+          child: ListView.builder(
+            controller: _scrollController,
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+            itemCount: _messages.length + (_isTyping ? 1 : 0),
+            itemBuilder: (context, index) {
+              if (index == _messages.length && _isTyping) {
+                return _TypingIndicator(isDark: isDark);
+              }
+              return _MessageBubble(
+                message: _messages[index],
+                isDark: isDark,
+              );
+            },
+          ),
+        ),
+
+          // Disclaimer
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+            color: isDark
+                ? AppColors.darkCard.withValues(alpha: 0.5)
+                : AppColors.paleGreen.withValues(alpha: 0.3),
+            child: Text(
+              'âš–ï¸ Informations à titre indicatif. Consultez un avocat pour un conseil personnalisé.',
+              style: TextStyle(
+                fontFamily: 'Inter',
+                fontSize: 10,
+                color: AppColors.grey500,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
+
+          // Input
+          _ChatInput(
+            controller: _controller,
+            isDark: isDark,
+            onSend: _sendMessage,
+            onVoice: _startVoiceInput,
+          ),
+      ],
+    );
+
+    if (kIsWeb) {
+      return Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 1200),
+          child: chatBody,
+        ),
+      );
+    }
     return Scaffold(
-      appBar: kIsWeb ? null : AppBar(
+      appBar: AppBar(
         title: Row(
           children: [
             Container(
@@ -91,57 +162,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
           ),
         ],
       ),
-      body: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 1200),
-          child: Column(
-            children: [
-          // Messages
-          Expanded(
-            child: ListView.builder(
-              controller: _scrollController,
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-              itemCount: _messages.length + (_isTyping ? 1 : 0),
-              itemBuilder: (context, index) {
-                if (index == _messages.length && _isTyping) {
-                  return _TypingIndicator(isDark: isDark);
-                }
-                return _MessageBubble(
-                  message: _messages[index],
-                  isDark: isDark,
-                );
-              },
-            ),
-          ),
-
-          // Disclaimer
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-            color: isDark
-                ? AppColors.darkCard.withValues(alpha: 0.5)
-                : AppColors.paleGreen.withValues(alpha: 0.3),
-            child: Text(
-              'âš–ï¸ Informations à titre indicatif. Consultez un avocat pour un conseil personnalisé.',
-              style: TextStyle(
-                fontFamily: 'Inter',
-                fontSize: 10,
-                color: AppColors.grey500,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ),
-
-          // Input
-          _ChatInput(
-            controller: _controller,
-            isDark: isDark,
-            onSend: _sendMessage,
-            onVoice: _startVoiceInput,
-          ),
-        ],
-      ),
-      ),
-      ),
+      body: chatBody,
     );
   }
 

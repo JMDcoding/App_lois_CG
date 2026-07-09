@@ -16,6 +16,8 @@ class ProfileScreen extends ConsumerWidget {
     final user = ref.watch(currentUserProvider);
 
     final scrollBody = CustomScrollView(
+        shrinkWrap: kIsWeb,
+        physics: kIsWeb ? const NeverScrollableScrollPhysics() : null,
         slivers: [
           SliverAppBar(
             expandedHeight: 200,
@@ -106,17 +108,14 @@ class ProfileScreen extends ConsumerWidget {
               ),
             ),
           ),
-          if (kIsWeb) const SliverToBoxAdapter(child: WebFooter()),
         ],
       );
 
     if (kIsWeb) {
-      return Scaffold(
-        body: Center(
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 1200),
-            child: scrollBody,
-          ),
+      return Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 1200),
+          child: scrollBody,
         ),
       );
     }

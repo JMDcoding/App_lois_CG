@@ -15,13 +15,19 @@ class WebScaffold extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      body: Column(
-        children: [
-          _WebHeader(),
-          Expanded(
-            child: child,
-          ),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            _WebHeader(),
+            Container(
+              constraints: BoxConstraints(
+                minHeight: MediaQuery.of(context).size.height - 80,
+              ),
+              child: child,
+            ),
+            const WebFooter(),
+          ],
+        ),
       ),
     );
   }

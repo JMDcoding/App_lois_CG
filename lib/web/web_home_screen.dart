@@ -9,14 +9,11 @@ class WebHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          _HeroSection(),
-          _FeaturesSection(),
-          const WebFooter(), // Ajout du footer public
-        ],
-      ),
+    return Column(
+      children: [
+        _HeroSection(),
+        _FeaturesSection(),
+      ],
     );
   }
 }

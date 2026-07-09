@@ -31,6 +31,8 @@ class LibraryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final scrollBody = CustomScrollView(
+        shrinkWrap: kIsWeb,
+        physics: kIsWeb ? const NeverScrollableScrollPhysics() : null,
         slivers: [
           if (!kIsWeb)
             SliverAppBar(
@@ -86,17 +88,14 @@ class LibraryScreen extends StatelessWidget {
               ),
             ),
           ),
-          if (kIsWeb) const SliverToBoxAdapter(child: WebFooter()),
         ],
       );
 
     if (kIsWeb) {
-      return Scaffold(
-        body: Center(
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 1200),
-            child: scrollBody,
-          ),
+      return Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 1200),
+          child: scrollBody,
         ),
       );
     }
