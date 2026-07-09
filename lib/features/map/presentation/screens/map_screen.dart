@@ -29,7 +29,7 @@ class MapScreen extends StatelessWidget {
           ),
           // Map placeholder
         kIsWeb ? SizedBox(
-          height: 600,
+          height: 450,
           child: Container(
               color: isDark ? AppColors.darkCard : AppColors.grey100,
               child: Center(

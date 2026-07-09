@@ -19,10 +19,11 @@ class ProfileScreen extends ConsumerWidget {
         shrinkWrap: kIsWeb,
         physics: kIsWeb ? const NeverScrollableScrollPhysics() : null,
         slivers: [
-          SliverAppBar(
-            expandedHeight: 200,
-            flexibleSpace: FlexibleSpaceBar(
-              background: Container(
+          if (kIsWeb)
+            SliverToBoxAdapter(
+              child: Container(
+                height: 200,
+                width: double.infinity,
                 decoration: const BoxDecoration(gradient: AppColors.primaryGradient),
                 child: SafeArea(
                   child: Column(
@@ -32,25 +33,65 @@ class ProfileScreen extends ConsumerWidget {
                         radius: 40,
                         backgroundColor: AppColors.white.withValues(alpha: 0.2),
                         child: Text(
-                          user?.displayName?.substring(0, 1).toUpperCase() ?? 'M',
+                          (user?.displayName != null && user!.displayName!.isNotEmpty)
+                              ? user.displayName!.substring(0, 1).toUpperCase()
+                              : 'J',
                           style: const TextStyle(
                             fontSize: 28, fontWeight: FontWeight.w700,
                             color: AppColors.white),
                         ),
                       ),
                       const SizedBox(height: 12),
-                      Text(user?.displayName ?? 'Utilisateur Mobeko',
+                      Text((user?.displayName != null && user!.displayName!.isNotEmpty)
+                              ? user!.displayName!
+                              : 'Jean-Marc',
                           style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700,
                               color: AppColors.white)),
-                      Text(user?.email ?? 'Mode invité',
+                      Text(user?.email ?? 'Mode hors-ligne',
                           style: TextStyle(fontSize: 13,
                               color: AppColors.white.withValues(alpha: 0.8))),
                     ],
                   ),
                 ),
               ),
+            )
+          else
+            SliverAppBar(
+              expandedHeight: 200,
+              flexibleSpace: FlexibleSpaceBar(
+                background: Container(
+                  decoration: const BoxDecoration(gradient: AppColors.primaryGradient),
+                  child: SafeArea(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CircleAvatar(
+                          radius: 40,
+                          backgroundColor: AppColors.white.withValues(alpha: 0.2),
+                          child: Text(
+                            (user?.displayName != null && user!.displayName!.isNotEmpty)
+                                ? user.displayName!.substring(0, 1).toUpperCase()
+                                : 'J',
+                            style: const TextStyle(
+                              fontSize: 28, fontWeight: FontWeight.w700,
+                              color: AppColors.white),
+                          ),
+                        ),
+                        const SizedBox(height: 12),
+                        Text((user?.displayName != null && user!.displayName!.isNotEmpty)
+                                ? user!.displayName!
+                                : 'Jean-Marc',
+                            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700,
+                                color: AppColors.white)),
+                        Text(user?.email ?? 'Mode hors-ligne',
+                            style: TextStyle(fontSize: 13,
+                                color: AppColors.white.withValues(alpha: 0.8))),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
             ),
-          ),
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.all(16),

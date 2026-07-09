@@ -92,8 +92,8 @@ final routerProvider = Provider<GoRouter>((ref) {
           // Home tab
           GoRoute(
             path: AppRoutes.home,
-            pageBuilder: (context, state) => NoTransitionPage(
-              child: kIsWeb ? const WebHomeScreen() : const HomeScreen(),
+            pageBuilder: (context, state) => const NoTransitionPage(
+              child: HomeScreen(),
             ),
           ),
 

@@ -7,6 +7,7 @@ import '../../../../core/widgets/search_bar_widget.dart';
 import '../../../../core/widgets/category_card.dart';
 import '../../../../core/widgets/responsive_layout.dart';
 import '../../../../core/providers/firebase_providers.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 import 'package:url_launcher/url_launcher.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -84,6 +85,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       body: SafeArea(
         child: ResponsiveMaxWidth(
           child: CustomScrollView(
+            shrinkWrap: kIsWeb,
+            physics: kIsWeb ? const NeverScrollableScrollPhysics() : null,
             slivers: [
             // Header avec message de bienvenue
             SliverToBoxAdapter(
@@ -233,11 +236,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   children: [
                     Expanded(
                       child: _ServiceCard(
-                        title: 'Scanner',
-                        subtitle: 'Analyser un document',
-                        icon: Icons.document_scanner_outlined,
+                        title: 'Cartes',
+                        subtitle: 'Trouver un professionnel',
+                        icon: Icons.map_rounded,
                         color: AppColors.warning,
-                        onTap: () => context.push(AppRoutes.scan),
+                        onTap: () => context.push(AppRoutes.map),
                       ),
                     ),
                     const SizedBox(width: 12),
@@ -327,7 +330,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               ),
             ),
 
-            const SliverToBoxAdapter(child: SizedBox(height: 80)),
+            SliverToBoxAdapter(child: SizedBox(height: kIsWeb ? 20 : 80)),
           ],
         ),
       )),
