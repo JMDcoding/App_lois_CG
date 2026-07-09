@@ -96,7 +96,7 @@ class _HeroSection extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(24),
                   child: Image.asset(
-                    'assets/images/logo/logo_padded.jpeg', // Fallback
+                    'assets/images/logo/logo.jpeg', // Fallback
                     fit: BoxFit.cover,
                   ),
                 ),

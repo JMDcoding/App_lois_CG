@@ -59,7 +59,7 @@ class _WebHeader extends StatelessWidget {
             child: Row(
               children: [
                 // Logo
-                Image.asset('assets/images/logo/logo_padded.jpeg', height: 40),
+                Image.asset('assets/images/logo/logo.jpeg', height: 40),
                 const SizedBox(width: 16),
                 Text(
                   'Mobeko',
